@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chal Sathi | Chat</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+
+  <!-- ============ Shared header ============ -->
+  <header class="site-header">
+    <a href="home.html" class="logo"><img src="img/Logo.svg" alt="Chal Sathi logo"></a>
+    <nav class="site-nav">
+      <a href="home.html" class="nav-link">HOME</a>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="menu.html" class="nav-link">MENU</a>
+      <a href="chat.html" class="nav-link active">CHAT</a>
+      <a href="contact.html" class="nav-link">CONTACT</a>
+    </nav>
+    <div class="site-header__icons">
+      <a href="notifications.html" class="icon-btn" aria-label="Notifictaions">
+        <i class="fa-regular fa-bell"></i>      
+      </a>
+      <a href="profile.html" class="avatar-btn" aria-label="Profile">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    </div>
+  </header>
+
+  <main class="chat-page">
+    <div class="chat-layout">
+
+      <!-- ============ Sidebar: conversations ============ -->
+      <aside class="chat-sidebar">
+        <div class="chat-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="conversation-search" placeholder="Search conversations...">
+        </div>
+
+        <span class="chat-sidebar__label">Conversations</span>
+
+        <div class="conversation-list" id="conversation-list">
+
+    <!-- Support -->
+    <div class="conversation-item active" data-conversation="support">
+
+        <div class="conversation-item__avatar">
+            <img src="img/boy1.jpg" alt="Support Team">
+        </div>
+
+        <div class="conversation-item__body">
+
+            <div class="conversation-item__top">
+                <h4>Support Team</h4>
+                <time>2m ago</time>
+            </div>
+
+            <p class="conversation-item__snippet">
+                How can we help with...
+            </p>
+
+        </div>
+    </div>
+
+
+    <!-- Menu -->
+    <div class="conversation-item" data-conversation="menu">
+
+        <div class="conversation-item__avatar">
+            <img src="img/boy.jpg" alt="Support Team">
+        </div>
+
+        <div class="conversation-item__body">
+
+            <div class="conversation-item__top">
+                <h4>Menu Inquiries</h4>
+                <time>1h ago</time>
+            </div>
+
+            <p class="conversation-item__snippet">
+                Thank you for your...
+            </p>
+
+        </div>
+    </div>
+
+</div>
+      </aside>
+
+      <!-- ============ Main: chat window ============ -->
+      <section class="chat-main">
+        <div class="chat-main__header">
+          <div class="avatar">
+            <img src="img/world.jpg" alt="Chal Sathi">
+          </div>
+          <h3 id="chat-title">Chal Sathi Concierge</h3>
+          <button class="icon-btn" aria-label="Call">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .7 3a2 2 0 01-.4 2.1L8.1 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c1 .3 2 .6 3 .7a2 2 0 011.7 2z"/></svg>
+          </button>
+          <button class="icon-btn" aria-label="More options">
+            <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg>
+          </button>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+          <span class="chat-day-divider">Today</span>
+
+          <div class="chat-msg chat-msg--bot">
+            <div class="avatar">
+              <img src="img/boy1.jpg" alt="Chal Sathi">
+            </div>
+            <div class="chat-msg__bubble">
+              <p>Namaste! Welcome to Chal Sathi. I'm your host today. How can I make your experience better?</p>
+              <time>10:00 AM</time>
+            </div>
+          </div>
+
+          <div class="chat-msg chat-msg--user">
+            <div class="chat-msg__bubble">
+              <p>Hi! I wanted to check if you have any special events planned for the community this weekend?</p>
+              <time>10:02 AM</time>
+            </div>
+          </div>
+
+          <div class="chat-msg chat-msg--bot">
+            <div class="avatar">
+             <img src="img/boy2.jpg" alt="Chal Sathi">
+            </div>
+            <div class="chat-msg__bubble">
+              <p>We certainly do! This Saturday we're hosting a "Street Chai Stories" session at 4 PM. We'd love for you to join. Would you like me to reserve a spot for you?</p>
+              <time>10:03 AM</time>
+            </div>
+          </div>
+        </div>
+
+        <form class="chat-input-row" id="chat-form">
+          <button type="button" class="icon-btn" aria-label="Attach file">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5l-8.7 8.7a4.9 4.9 0 01-7-7l9-9a3.5 3.5 0 015 5l-9 9a2 2 0 01-3-3l8.2-8.2"/></svg>
+          </button>
+          <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
+          <button type="submit" class="chat-send-btn" aria-label="Send message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ Shared footer ============ -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col brand">
+        <div class="brand-name">Chal Sathi</div>
+        <p>Togetherness in every cup. A sanctuary for community, conversation, and the finest chai.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Join Us</h4>
+        <a href="#">Careers</a>
+       <div class="social-row">
+          <a href="https://www.facebook.com/" class="social-icon" aria-label="Continue with Facebook">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a href="https://mail.google.com/mail/u/0/#inbox" class="social-icon" aria-label="Continue with Google">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="home.html" class="social-icon" aria-label="Continue with phone">
+            <i class="fa-solid fa-square-phone"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-tagline">
+      Food • Fun • Friendship<br>
+      Create • Connect • Communicate
+    </p>
+    <p class="footer-copyright">© 2024 Chal Sathi. Togetherness in every cup.</p>
+  </footer>
+
+  <script src="chat.js"></script>
+</body>
+</html>

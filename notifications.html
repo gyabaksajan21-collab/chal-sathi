@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chal Sathi | Notifications</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="notifications.css">
+</head>
+<body>
+
+  <!-- ============ Shared header ============ -->
+  <header class="site-header">
+    <a href="home.html" class="logo"><img src="img/Logo.svg" alt="Chal Sathi logo"></a>
+    <nav class="site-nav">
+      <a href="home.html" class="nav-link">HOME</a>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="menu.html" class="nav-link">MENU</a>
+      <a href="chat.html" class="nav-link">CHAT</a>
+      <a href="contact.html" class="nav-link">CONTACT</a>
+    </nav>
+    <div class="site-header__icons">
+      <a href="notifications.html" class="icon-btn" aria-label="Notifictaions">
+        <i class="fa-regular fa-bell"></i>      
+      </a>
+      <a href="profile.html" class="avatar-btn" aria-label="Profile">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    </div>
+  </header>
+
+  <main class="notifications-page">
+    <div class="notifications-page__header">
+      <h1>Notifications</h1>
+      <p>Stay updated with your community moments and orders.</p>
+    </div>
+
+    <div class="notif-tabs">
+      <span class="notif-tab active">All</span>
+    </div>
+
+    <div class="notif-list">
+
+      <div class="notif-row unread">
+        <div class="notif-row__icon notif-row__icon--dark">
+          <i class="fa-solid fa-bell"></i>
+        </div>
+        <div class="notif-row__body">
+          <div class="notif-row__top">
+            <h3>New Weekend Special</h3>
+            <time>1h ago</time>
+          </div>
+          <p>Our chefs just launched the "Saffron Chai & Pistachio Delight". Available only this weekend!</p>
+        </div>
+      </div>
+
+      <div class="notif-row">
+        <div class="notif-row__icon notif-row__icon--red">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <div class="notif-row__body">
+          <div class="notif-row__top">
+            <h3>Loved by Community</h3>
+            <time>5h ago</time>
+          </div>
+          <p>Your photo of the "Artisan Samosa Platter" just hit 50 likes in the Chal Sathi community gallery.</p>
+        </div>
+      </div>
+
+      <div class="notif-row">
+        <div class="notif-row__icon notif-row__icon--blue">
+          <i class="fa-solid fa-calendar-days"></i> 
+        </div>
+        <div class="notif-row__body">
+          <div class="notif-row__top">
+            <h3>Event Tomorrow: Chai & Poetry</h3>
+            <time>Yesterday</time>
+          </div>
+          <p>Don't forget our monthly poetry slam starts tomorrow at 6 PM. Bring your favorite verses!</p>
+        </div>
+      </div>
+
+      <div class="notif-row">
+        <div class="notif-row__icon notif-row__icon--purple">
+          <i class="fa-solid fa-bullhorn"></i>
+        </div>
+        <div class="notif-row__body">
+          <div class="notif-row__top">
+            <h3>App Update</h3>
+            <time>2 days ago</time>
+          </div>
+          <p>We've improved our loyalty points tracking. Check out the new Rewards tab in your profile.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============ Shared footer ============ -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col brand">
+        <div class="brand-name">Chal Sathi</div>
+        <p>Togetherness in every cup. A sanctuary for community, conversation, and the finest chai.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Join Us</h4>
+        <a href="#">Careers</a>
+        <div class="social-row">
+          <a href="https://www.facebook.com/" class="social-icon" aria-label="Continue with Facebook">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a href="https://mail.google.com/mail/u/0/#inbox" class="social-icon" aria-label="Continue with Google">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="home.html" class="social-icon" aria-label="Continue with phone">
+            <i class="fa-solid fa-square-phone"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-tagline">
+      Food • Fun • Friendship<br>
+      Create • Connect • Communicate
+    </p>
+    <p class="footer-copyright">© 2024 Chal Sathi. Togetherness in every cup.</p>
+  </footer>
+
+</body>
+</html>

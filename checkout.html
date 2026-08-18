@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chal Sathi | Checkout</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+  <!-- ============ Shared header (nav suppressed to plain text,
+       matching the Figma note "Navigation suppressed for
+       transactional page" — icons stay for wayfinding) ============ -->
+  <header class="site-header">
+    <a href="home.html" class="logo"><img src="img/Logo.svg" alt="Chal Sathi logo"></a>
+    <nav class="site-nav">
+      <a href="home.html" class="nav-link">HOME</a>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="menu.html" class="nav-link">MENU</a>
+      <a href="chat.html" class="nav-link">CHAT</a>
+      <a href="contact.html" class="nav-link">CONTACT</a>
+    </nav>
+    <div class="site-header__icons">
+      <a href="notifications.html" class="icon-btn" aria-label="Notifictaions">
+        <i class="fa-regular fa-bell"></i>      
+      </a>
+      <a href="profile.html" class="avatar-btn" aria-label="Profile">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    </div>
+  </header>
+  <!-- Order Success Popup -->
+<div class="order-popup" id="order-popup">
+    <div class="popup-box">
+        <div class="popup-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+
+        <h2>Order Placed!</h2>
+
+        <p>
+            Thank you for your order.<br>
+            Your food is now being prepared.
+        </p>
+
+        <button id="popup-ok">OK</button>
+    </div>
+</div>
+
+  <main class="checkout-page">
+    <div class="checkout-page__header">
+      <h1>Checkout</h1>
+      <p>Complete your order details below.</p>
+    </div>
+
+    <form class="checkout-layout" id="checkout-form">
+
+      <!-- ============ Left column: forms ============ -->
+      <div class="checkout-forms">
+
+        <section class="checkout-card">
+          <h2>Delivery Details</h2>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="full-name">Full Name</label>
+              <input type="text" id="full-name" placeholder="Enter your Name....." required>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="98XXXXXXXX" pattern="[0-9]{10}" required>
+            </div>
+            <div class="form-field form-field--full">
+              <label for="address">Delivery Address</label>
+              <textarea id="address" placeholder="Enter your full address with landmarks..." required></textarea>
+            </div>
+            <div class="form-field form-field--full">
+              <label for="delivery-time">Delivery Time</label>
+              <select id="delivery-time">
+                <option>ASAP (Approx 30-45 mins)</option>
+                <option>Schedule for later today</option>
+                <option>Schedule for tomorrow</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="checkout-card">
+          <h2>Payment Method</h2>
+
+          <div class="payment-grid">
+            <label class="payment-option">
+              <input type="radio" name="payment" value="cod" checked>
+              <span class="radio-dot"></span>
+              <span class="payment-label">Cash on Delivery</span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="esewa">
+              <span class="radio-dot"></span>
+              <span class="payment-label">eSewa</span>
+              
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="khalti">
+              <span class="radio-dot"></span>
+              <span class="payment-label">Khalti</span>
+              
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="card">
+              <span class="radio-dot"></span>
+              <span class="payment-label">Credit/Debit Card</span>
+            </label>
+          </div>
+        </section>
+      </div>
+
+      <!-- ============ Right column: order summary ============ -->
+      <aside class="order-summary">
+        <h2>Order Summary</h2>
+
+        <div class="summary-list" id="summary-list">
+          <!-- Filled in by checkout.js -->
+        </div>
+
+        <div class="summary-rows">
+          <div class="summary-row"><span>Subtotal</span><span id="sum-subtotal">Rs. 650</span></div>
+          <div class="summary-row"><span>Delivery Fee</span><span id="sum-delivery">Rs. 10</span></div>
+          <div class="summary-row summary-row--discount"><span>Discount</span><span>Rs. 0</span></div>
+        </div>
+
+        <div class="summary-row summary-row--total">
+          <span>Total</span>
+          <span id="sum-total">Rs. 660</span>
+        </div>
+
+        <button type="submit" class="btn-place-order" id="btn-place-order">Place Order</button>
+      </aside>
+
+    </form>
+  </main>
+
+  <!-- ============ Shared footer ============ -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col brand">
+        <div class="brand-name">Chal Sathi</div>
+        <p>Togetherness in every cup. A sanctuary for community, conversation, and the finest chai.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Join Us</h4>
+        <a href="#">Careers</a>
+        <div class="social-row">
+          <a href="https://www.facebook.com/" class="social-icon" aria-label="Continue with Facebook">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a href="https://mail.google.com/mail/u/0/#inbox" class="social-icon" aria-label="Continue with Google">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="home.html" class="social-icon" aria-label="Continue with phone">
+            <i class="fa-solid fa-square-phone"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-tagline">
+      Food • Fun • Friendship<br>
+      Create • Connect • Communicate
+    </p>
+    <p class="footer-copyright">© 2024 Chal Sathi. Togetherness in every cup.</p>
+  </footer>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

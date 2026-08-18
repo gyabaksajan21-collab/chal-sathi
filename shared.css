@@ -1,0 +1,464 @@
+/* ===================================================
+   Chal Sathi — shared styles (header, footer, tokens)
+   Include this file on every page, then add a
+   page-specific stylesheet after it.
+=================================================== */
+
+:root {
+  --red: #e63946;
+  --red-dark: #db3140;
+  --price-red: #b7122b;
+  --ink: #271717;
+  --ink-soft: #5b403f;
+  --ink-soft2: #594140;
+  --footer-bg: #003049;
+  --footer-text: #f9f9f9;
+  --footer-text-dim: #e2e2e2;
+  --card-border: rgba(228, 190, 188, .3);
+  --btn-blue: #3d627d;
+}
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Crimson Text', serif;
+  
+}
+
+a { 
+  text-decoration: none;
+  color: inherit; }
+button { 
+  font-family: inherit; 
+  cursor: pointer; }
+
+/* ------------------- Header / nav ------------------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+
+  /* Bigger header */
+  height: 105px;
+  min-height: 105px;
+
+  padding: 0 55px;
+  background: #ffffff;
+
+  gap: 55px;
+
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ------------------- Logo ------------------- */
+
+.site-header .logo {
+    width: 150px;
+    height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    overflow: visible;
+}
+
+.site-header .logo img {
+    width: 150px;
+    height: 105px;
+
+    object-fit: contain;
+    display: block;
+
+    /* Makes the actual logo appear larger */
+    transform: scale(1.7);
+}
+
+/* ------------------- Navigation ------------------- */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+  flex: 1;
+
+  height: 100%;
+}
+
+.site-nav .nav-link {
+  font-family: 'Crimson Text', serif;
+
+  /* Larger text */
+  font-size: 19px;
+  font-weight: 400;
+
+  padding: 20px 25px;
+
+  color: var(--ink);
+
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 66px;
+
+  transition: all 0.2s ease;
+}
+
+/* Active HOME button */
+
+.site-nav .nav-link.active {
+  background: var(--red);
+  color: #fff;
+
+  font-weight: 700;
+
+  border-radius: 25px 0 25px 0;
+}
+
+/* Hover effect */
+.site-nav .nav-link:hover {
+  color: var(--red);
+}
+
+.site-nav .nav-link.active:hover {
+  color: #fff;
+  background: var(--red-dark);
+}
+
+/* ------------------- Right side icons ------------------- */
+
+.site-header__icons {
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+}
+
+/* Notification */
+
+.icon-btn {
+  background: none;
+  border: none;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.icon-btn svg,
+.icon-btn i {
+  font-size: 25px;
+  color: var(--ink);
+}
+
+/* Profile circle */
+
+.avatar-btn {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  background: #e63946;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  transition: transform 0.2s ease;
+}
+
+.avatar-btn:hover {
+  transform: scale(1.05);
+}
+
+.avatar-btn i {
+  font-size: 22px;
+  color: white;
+}
+
+/* ------------------- Responsive ------------------- */
+
+@media (max-width: 1100px) {
+  .site-header {
+    height: 95px;
+    min-height: 95px;
+    padding: 0 30px;
+    gap: 25px;
+  }
+
+  .site-header .logo {
+    width: 105px;
+  }
+
+  .site-header .logo img {
+    width: 100px;
+    height: 75px;
+  }
+
+  .site-nav .nav-link {
+    font-size: 17px;
+    padding: 18px 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    height: auto;
+    min-height: 90px;
+
+    flex-wrap: wrap;
+    gap: 12px;
+
+    padding: 12px 20px;
+  }
+
+  .site-header .logo {
+    width: 100px;
+    height: 70px;
+  }
+
+  .site-header .logo img {
+    width: 95px;
+    height: 65px;
+  }
+
+  .site-nav {
+    gap: 2px;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .site-nav .nav-link {
+    padding: 12px 14px;
+    font-size: 16px;
+    height: 50px;
+  }
+
+  .site-header__icons {
+    gap: 12px;
+  }
+}
+
+/* ------------------- Footer ------------------- */
+
+.site-footer {
+  background: #003049;
+  padding: 0 40px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  padding: 64px 0 64px 24px;
+}
+
+.footer-col h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--footer-text);
+  letter-spacing: .14px;
+  margin-bottom: 16px;
+}
+
+.footer-col.brand p {
+  font-family: 'Crimson Text', serif;
+  color: var(--footer-text-dim);
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+.footer-col.brand .brand-name {
+  font-family: 'Crimson Text', serif;
+  font-size: 24px;
+  color: var(--footer-text);
+}
+
+.footer-col a {
+  display: block;
+  flex: auto;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--footer-text-dim);
+  margin-bottom: 10px;
+}
+
+.social-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+}
+
+.social-row .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 16px;
+}
+
+.footer-tagline {
+  border-top: 1px solid rgba(226,226,226,.1);
+  text-align: center;
+  color: #fff;
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+  padding: 24px;
+  line-height: 1.6;
+}
+
+.footer-copyright {
+  border-top: 1px solid rgba(226,226,226,.1);
+  text-align: center;
+  color: var(--footer-text-dim);
+  font-family: 'Crimson Text', serif;
+  font-size: 12px;
+  padding: 25px 24px 24px;
+}
+
+/* ===================================================
+   RESPONSIVE — MOBILE
+=================================================== */
+
+@media (max-width: 720px) {
+
+  /* =========================
+     HEADER
+  ========================= */
+
+  .site-header {
+    width: 100%;
+
+    min-height: 75px;
+    height: auto;
+
+    padding: 8px 15px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 5px 10px;
+  }
+
+
+  /* =========================
+     LOGO
+  ========================= */
+
+  .site-header .logo {
+    width: 85px;
+    height: 58px;
+
+    flex-shrink: 0;
+  }
+
+  .site-header .logo img {
+    width: 85px;
+    height: 58px;
+
+    transform: scale(1.25);
+  }
+
+
+  /* =========================
+     HEADER ICONS
+  ========================= */
+
+  .site-header__icons {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+  }
+
+  .icon-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-btn svg,
+  .icon-btn i {
+    font-size: 20px;
+  }
+
+  .avatar-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .avatar-btn i {
+    font-size: 18px;
+  }
+
+
+  /* =========================
+     NAVIGATION
+  ========================= */
+
+  .site-nav {
+    order: 3;
+
+    width: 100%;
+    flex-basis: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 4px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 4px 0 6px;
+
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav .nav-link {
+    flex-shrink: 0;
+
+    height: 42px;
+
+    padding: 8px 14px;
+
+    font-size: 15px;
+
+    border-radius: 16px;
+  }
+
+  .site-nav .nav-link.active {
+    border-radius: 18px 0 18px 0;
+  }
+}

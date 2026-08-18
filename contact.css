@@ -1,0 +1,334 @@
+/* ===================================================
+   Chal Sathi — Contact page
+=================================================== */
+
+.contact-page {
+    padding: 56px 68px 96px;
+}
+
+
+/* ===================================================
+   PAGE HEADER
+=================================================== */
+
+.contact-page__header {
+    max-width: 640px;
+    margin-bottom: 40px;
+}
+
+.contact-page__header h1 {
+    font-family: 'Crimson Text', serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: var(--red);
+    margin: 0 0 12px;
+}
+
+.contact-page__header p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+}
+
+
+/* ===================================================
+   CONTACT LAYOUT
+=================================================== */
+
+.contact-layout {
+    width: 100%;
+    max-width: 1313px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+
+/* ===================================================
+   LEFT: PHOTO + FORM
+=================================================== */
+
+.contact-visual {
+    position: relative;
+    min-height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    /*
+       Restaurant image + dark overlay
+    */
+    background:
+        url("img/bg.png");
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* ===================================================
+   CONTACT FORM CARD
+=================================================== */
+
+.contact-form-card {
+    position: absolute;
+    top: 10px;
+    left: 24px;
+    width: 300px;
+    padding: 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    box-sizing: border-box;
+}
+
+.contact-form-card h2 {
+    font-family: 'Crimson Text', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--red);
+    margin: 0 0 20px;
+}
+
+
+/* ===================================================
+   FORM FIELDS
+=================================================== */
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.contact-field label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: #151c27;
+}
+
+.contact-field input,
+.contact-field textarea {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #151c27;
+    background: #fdf5f4;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 10px 14px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease,
+                box-shadow 0.15s ease;
+}
+
+
+/* Focus */
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 2px rgba(200, 16, 46, 0.08);
+}
+
+
+/* Textarea */
+
+.contact-field textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+
+/* ===================================================
+   SEND BUTTON
+=================================================== */
+
+.btn-send-message {
+    width: 100%;
+    background: var(--red-dark);
+    color: #fff;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease,
+                transform 0.15s ease;
+}
+
+.btn-send-message:hover {
+    background: #b8232f;
+}
+
+.btn-send-message:active {
+    transform: scale(0.98);
+}
+
+
+/* ===================================================
+   RIGHT SIDE
+=================================================== */
+
+.contact-side {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+/* ===================================================
+   PANELS
+=================================================== */
+
+.contact-panel {
+    border-radius: 16px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+
+/* ===================================================
+   OPENING HOURS
+=================================================== */
+
+.contact-panel--hours {
+    background: #fff1f1;
+}
+
+.contact-panel--hours h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #151c27;
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* Hours */
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(226, 190, 186, 0.5);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.hours-row:last-child {
+    border-bottom: none;
+}
+
+.hours-row .day {
+    color: var(--ink-soft);
+}
+
+.hours-row .time {
+    font-weight: 700;
+    color: #151c27;
+    text-align: right;
+}
+
+
+/* ===================================================
+   CONNECT WITH US
+=================================================== */
+
+.contact-panel--connect {
+    background: #17273a;
+}
+
+.contact-panel--connect h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    margin: 0 0 16px;
+}
+
+
+/* Social grid */
+
+.connect-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+
+/* Social buttons */
+
+.connect-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 16px 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.15s ease,
+                transform 0.15s ease;
+}
+
+.connect-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    transform: translateY(-2px);
+}
+
+
+/* Font Awesome icons */
+
+.connect-btn i {
+    font-size: 20px;
+}
+
+
+/* Text */
+
+.connect-btn span {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+
+@media (max-width: 720px) {
+
+    .contact-page {
+        padding: 32px 20px 60px;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-visual {
+        min-height: 320px;
+    }
+
+    .contact-form-card {
+        position: static;
+
+        width: auto;
+
+        margin: 24px;
+    }
+}

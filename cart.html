@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chal Sathi | Cart</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+  <!-- ============ Shared header ============ -->
+  <header class="site-header">
+    <a href="home.html" class="logo"><img src="img/Logo.svg" alt="Chal Sathi logo"></a>
+    <nav class="site-nav">
+      <a href="home.html" class="nav-link">HOME</a>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="menu.html" class="nav-link" style="color:#e63946">MENU</a>
+      <a href="chat.html" class="nav-link">CHAT</a>
+      <a href="contact.html" class="nav-link">CONTACT</a>
+    </nav>
+    <div class="site-header__icons">
+      <a href="notifications.html" class="icon-btn" aria-label="Notifictaions">
+        <i class="fa-regular fa-bell"></i>      
+      </a>
+      <a href="profile.html" class="avatar-btn" aria-label="Profile">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <div class="cart-page__header">
+      <h1>Your Cart</h1>
+      <p>Review your order before checkout.</p>
+    </div>
+
+   <div class="cart-layout">
+
+  <!-- LEFT: CART ITEMS -->
+  <div class="cart-items">
+
+    <div class="cart-item">
+
+      <div class="cart-item__image">
+        <img src="img/Thakali Thali Set.jpg" alt="Thakali Thali Set">
+      </div>
+
+      <div class="cart-item__info">
+        <h3>Thakali Thali Set</h3>
+        <p>Traditional Nepali platter</p>
+        <strong>Rs. 650</strong>
+      </div>
+
+      <div class="cart-item__quantity">
+        <button type="button">−</button>
+        <span>1</span>
+        <button type="button">+</button>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- RIGHT: ORDER SUMMARY -->
+  <div class="order-summary">
+
+    <h2>Order Summary</h2>
+
+    <div class="summary-rows">
+
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span>Rs. 650</span>
+      </div>
+
+      <div class="summary-row">
+        <span>Delivery Fee</span>
+        <span>Rs. 10</span>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div class="summary-row summary-row--total">
+      <span>Total</span>
+      <span>Rs. 660</span>
+    </div>
+
+    <a href="checkout.html" class="btn-checkout">
+      Proceed to Checkout →
+    </a>
+
+    <a href="menu.html" class="btn-continue">
+      Continue Shopping
+    </a>
+
+  </div>
+
+</div>
+  </main>
+
+  <!-- ============ Shared footer ============ -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col brand">
+        <div class="brand-name">Chal Sathi</div>
+        <p>Togetherness in every cup. A sanctuary for community, conversation, and the finest chai.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Join Us</h4>
+        <a href="#">Careers</a>
+        <div class="social-row">
+          <a href="https://www.facebook.com/" class="social-icon" aria-label="Continue with Facebook">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a href="https://mail.google.com/mail/u/0/#inbox" class="social-icon" aria-label="Continue with Google">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="home.html" class="social-icon" aria-label="Continue with phone">
+            <i class="fa-solid fa-square-phone"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-tagline">Food • Fun • Friendship<br>Create • Connect • Communicate</p>
+    <p class="footer-copyright">© 2024 Chal Sathi. Togetherness in every cup.</p>
+  </footer>
+
+  <script src="cart-utils.js"></script>
+  <script src="cart.js"></script>
+</body>
+</html>

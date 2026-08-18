@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chal Sathi | Menu</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Inter:wght@400;700&family=Montserrat:wght@600&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+  <!-- ============ Shared header ============ -->
+  <header class="site-header">
+    <a href="home.html" class="logo"><img src="img/Logo.svg" alt="Chal Sathi logo"></a>
+    <nav class="site-nav">
+      <a href="home.html" class="nav-link">HOME</a>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="menu.html" class="nav-link active">MENU</a>
+      <a href="chat.html" class="nav-link">CHAT</a>
+      <a href="contact.html" class="nav-link">CONTACT</a>
+    </nav>
+    
+    <div class="site-header__icons">
+      <a href="cart.html" class="header-icon cart-icon" aria-label="Cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+         <span class="cart-count" id="cart-count">0</span>
+      </a>
+      <a href="notifications.html" class="icon-btn" aria-label="Notifictaions">
+        <i class="fa-regular fa-bell"></i>      
+      </a>
+      <a href="profile.html" class="avatar-btn" aria-label="Profile">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu-layout">
+
+    <!-- ============ Sidebar: search + categories ============ -->
+    <aside class="menu-sidebar">  
+
+      <div class="categories">
+        <h3>Categories</h3>
+        <a href="menu.html" class="cat-btn active">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v6a2 2 0 002 2v12h2V10a2 2 0 002-2V2h-2v6h-1V2H9v6H8V2H7z"/><path d="M17 2c-1.7 0-3 3.6-3 8s1.3 8 3 8 3-3.6 3-8-1.3-8-3-8z"/></svg>
+          Nepali
+        </a>
+        <a href="drinks.html" class="cat-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l-1.5 15a2 2 0 01-2 2h-5a2 2 0 01-2-2L6 3z"/><line x1="4" y1="3" x2="20" y2="3"/></svg>
+          Drinks
+        </a>
+      </div>
+    </aside>
+
+    <!-- ============ Main: bento grid ============ -->
+    <main class="menu-main">
+      <div class="menu-header">
+        <h2 id="section-title">Nepali Specials</h2>
+        <p id="section-subtitle">Traditional flavors from the heart of the Himalayas.</p>
+      </div>
+      <div class="bento-grid" id="bento-grid">
+
+        <article class="menu-item" data-category="nepali" data-name="Thakali Thali Set">
+          <div class="menu-item__img" style="background:#f4e3c1">
+            <img src="img/Thakali Thali Set.jpg" alt="Thakali Thali Set">
+          </div>
+          <div class="menu-item__body">
+            <div class="menu-item__top">
+              <h3>Thakali Thali Set</h3>
+              <span class="price">Rs. 650</span>
+            </div>
+            <p>A complete traditional meal with aromatic long-grain rice, black lentil soup, seasonal veggies and pickle.</p>
+            <button class="btn-add-cart" data-price="650">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="nepali" data-name="C-Momo">
+          <div class="menu-item__img" style="background:#ffe1e0">
+            <img src="img/C-momo.jpg" alt="C-Momo">
+          </div>
+          <div class="menu-item__body">
+            <div class="menu-item__top">
+              <h3>C-Momo</h3>
+              <span class="price">Rs. 160</span>
+            </div>
+            <p>Pan-fried dumplings tossed in our special spicy and tangy chili sauce with bell peppers.</p>
+            <button class="btn-add-cart" data-price="160">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="nepali" data-name="Chicken Thukpa">
+          <div class="menu-item__img" style="background:#f0e6d2">
+            <img src="img/Chicken Thukpa.jpg" alt="Chicken Thukpa">
+          </div>
+          <div class="menu-item__body">
+            <div class="menu-item__top">
+              <h3>Chicken Thukpa</h3>
+              <span class="price">Rs. 214.99</span>
+            </div>
+            <p>Warm Himalayan noodle soup with fresh greens and tender chicken strips in a rich broth.</p>
+            <button class="btn-add-cart" data-price="214.99">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="nepali" data-name="Buff Choila">
+          <div class="menu-item__img" style="background:#ffe1e0">
+            <img src="img/Buff-Choila.jpg" alt="Buff Choila">
+          </div>
+          <div class="menu-item__body">
+            <div class="menu-item__top">
+              <h3>Buff Choila</h3>
+              <span class="price">Rs. 250</span>
+            </div>
+            <p>Smoked buffalo meat marinated with authentic spices, ginger, garlic, and mustard oil.</p>
+            <button class="btn-add-cart" data-price="250">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="nepali" data-name="Non-Veg Ramen">
+          <div class="menu-item__img" style="background:#ffe1e0">
+            <img src="img/Non-Veg Ramen.jpg" alt="Non-Veg Ramen">
+          </div>
+          <div class="menu-item__body">
+            <div class="menu-item__top">
+              <h3>Non-Veg Ramen</h3>
+              <span class="price">Rs. 250</span>
+            </div>
+            <p>Hand-pulled noodles in our signature 18-hour broth, finished with seasonal truffle oil and wild mushrooms.</p>
+            <button class="btn-add-cart" data-price="250">Add to Cart</button>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="empty-state" id="empty-state" hidden>No dishes match your search.</p>
+    </main>
+  </div>
+
+  <!-- ============ Shared footer ============ -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col brand">
+        <div class="brand-name">Chal Sathi</div>
+        <p>Togetherness in every cup. A sanctuary for community, conversation, and the finest chai.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Join Us</h4>
+        <a href="#">Careers</a>
+        <div class="social-row">
+          <a href="home.html" class="social-icon" aria-label="Continue with Facebook">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a href="home.html" class="social-icon" aria-label="Continue with Google">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="home.html" class="social-icon" aria-label="Continue with phone">
+            <i class="fa-solid fa-square-phone"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-tagline">
+      Food • Fun • Friendship<br>
+      Create • Connect • Communicate
+    </p>
+    <p class="footer-copyright">© 2024 Chal Sathi. Togetherness in every cup.</p>
+  </footer>
+
+  <script src="menu.js"></script>
+</body>
+</html>

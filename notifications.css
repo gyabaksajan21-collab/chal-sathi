@@ -1,0 +1,248 @@
+/* ===================================================
+   Chal Sathi — Notifications page
+=================================================== */
+
+.notifications-page {
+    padding: 40px 68px 96px;
+}
+
+
+/* ==============================
+   PAGE HEADER
+============================== */
+
+.notifications-page__header {
+    max-width: 640px;
+    margin-bottom: 24px;
+}
+
+.notifications-page__header h1 {
+    font-family: 'Crimson Text', serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--red);
+    margin: 0 0 6px;
+}
+
+.notifications-page__header p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0;
+}
+
+
+/* ==============================
+   NOTIFICATION TABS
+============================== */
+
+.notif-tabs {
+    display: flex;
+    gap: 24px;
+
+    border-bottom: 1px solid var(--card-border);
+
+    margin-bottom: 0;
+
+    max-width: 1313px;
+}
+
+.notif-tab {
+    font-family: 'Inter', sans-serif;
+
+    font-weight: 700;
+    font-size: 14px;
+
+    color: var(--ink-soft);
+
+    padding: 0 2px 12px;
+
+    border-bottom: 2px solid transparent;
+
+    cursor: pointer;
+}
+
+.notif-tab.active {
+    color: var(--red);
+
+    border-bottom-color: var(--red);
+}
+
+
+/* ==============================
+   NOTIFICATION LIST
+============================== */
+
+.notif-list {
+    max-width: 1313px;
+
+    background: #fff;
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+
+/* ==============================
+   NOTIFICATION ROW
+============================== */
+
+.notif-row {
+    display: flex;
+
+    gap: 16px;
+
+    padding: 20px 24px;
+
+    border-bottom: 1px solid var(--card-border);
+
+    border-left: 3px solid transparent;
+
+    transition: background .15s ease;
+}
+
+.notif-row:last-child {
+    border-bottom: none;
+}
+
+.notif-row:hover {
+    background: #fafafa;
+}
+
+
+/* ==============================
+   UNREAD NOTIFICATION
+============================== */
+
+.notif-row.unread {
+    border-left-color: var(--red);
+
+    background: #fffafa;
+}
+
+
+/* ==============================
+   NOTIFICATION ICON
+============================== */
+
+.notif-row__icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+
+    flex-shrink: 0;
+
+    color: #fff;
+}
+
+.notif-row__icon--dark {
+    background: #2a2733;
+}
+
+.notif-row__icon--red {
+    background: var(--red);
+}
+
+.notif-row__icon--blue {
+    background: #3d6bc9;
+}
+
+.notif-row__icon--purple {
+    background: #7c5ce0;
+}
+
+
+/* ==============================
+   NOTIFICATION BODY
+============================== */
+
+.notif-row__body {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* ==============================
+   TITLE + TIME
+============================== */
+
+.notif-row__top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-bottom: 4px;
+}
+
+.notif-row__top h3 {
+    font-family: 'Inter', sans-serif;
+
+    font-weight: 700;
+
+    font-size: 15px;
+
+    color: #151c27;
+
+    margin: 0;
+}
+
+.notif-row__top time {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 12px;
+
+    color: #9a9a9a;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+}
+
+
+/* ==============================
+   NOTIFICATION DESCRIPTION
+============================== */
+
+.notif-row__body p {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: var(--ink-soft);
+
+    margin: 0;
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 720px) {
+
+    .notifications-page {
+        padding: 24px 20px 56px;
+    }
+
+    .notif-row {
+        padding: 16px;
+    }
+}

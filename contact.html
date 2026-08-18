@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chal Sathi | Contact</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <!-- ============ Shared header ============ -->
+  <header class="site-header">
+    <a href="home.html" class="logo"><img src="img/Logo.svg" alt="Chal Sathi logo"></a>
+    <nav class="site-nav">
+      <a href="home.html" class="nav-link">HOME</a>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="menu.html" class="nav-link">MENU</a>
+      <a href="chat.html" class="nav-link">CHAT</a>
+      <a href="contact.html" class="nav-link active">CONTACT</a>
+    </nav>
+    <div class="site-header__icons">
+      <a href="notifications.html" class="icon-btn" aria-label="Notifictaions">
+        <i class="fa-regular fa-bell"></i>      
+      </a>
+      <a href="profile.html" class="avatar-btn" aria-label="Profile">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    </div>
+  </header>
+
+  <main class="contact-page">
+    <div class="contact-page__header">
+      <h1>Say Hello!</h1>
+      <p>Whether you have a question about our menu, want to book a large event, or just want to talk about your favorite anime, we're here for you.</p>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- ============ Left: photo + floating form ============ -->
+      <div class="contact-visual">
+        <div class="contact-form-card">
+          <h2>Send a Message</h2>
+          <form id="contact-form">
+            <div class="contact-field">
+              <label for="c-name">Name</label>
+              <input type="text" id="c-name" placeholder="How should we call you?" required>
+            </div>
+            <div class="contact-field">
+              <label for="c-email">Email</label>
+              <input type="email" id="c-email" placeholder="your@email.com" required>
+            </div>
+            <div class="contact-field">
+              <label for="c-message">Message</label>
+              <textarea id="c-message" placeholder="What's on your mind?" required></textarea>
+            </div>
+            <button type="submit" class="btn-send-message">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- ============ Right: hours + connect ============ -->
+      <div class="contact-side">
+
+        <div class="contact-panel contact-panel--hours">
+          <h2>Opening Hours</h2>
+          <div class="hours-row">
+            <span class="day">Mon - Thu</span>
+            <span class="time">11:00 AM - 10:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="day">Fri - Sat</span>
+            <span class="time">11:00 AM - 12:00 AM</span>
+          </div>
+          <div class="hours-row">
+            <span class="day">Sunday</span>
+            <span class="time">10:00 AM - 9:00 PM</span>
+          </div>
+        </div>
+
+        <div class="contact-panel contact-panel--connect">
+          <h2>Connect With Us</h2>
+          <div class="connect-grid">
+            <a href="https://www.instagram.com/?hl=en" class="connect-btn">
+              <i class="fa-brands fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="https://x.com/" class="connect-btn">
+              <i class="fa-brands fa-twitter"></i>
+              <span>Twitter</span>
+            </a>
+            <a href="https://www.tiktok.com/en/" class="connect-btn">
+              <i class="fa-brands fa-tiktok"></i>
+              <span>TikTok</span>
+            </a>
+            <a href="https://www.facebook.com/" class="connect-btn">
+              <i class="fa-brands fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============ Shared footer ============ -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col brand">
+        <div class="brand-name">Chal Sathi</div>
+        <p>Togetherness in every cup. A sanctuary for community, conversation, and the finest chai.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Join Us</h4>
+        <a href="#">Careers</a>
+        <div class="social-row">
+          <a href="https://www.facebook.com/" class="social-icon" aria-label="Continue with Facebook">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a href="https://mail.google.com/mail/u/0/#inbox" class="social-icon" aria-label="Continue with Google">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="home.html" class="social-icon" aria-label="Continue with phone">
+            <i class="fa-solid fa-square-phone"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-tagline">
+      Food • Fun • Friendship<br>
+      Create • Connect • Communicate
+    </p>
+    <p class="footer-copyright">© 2024 Chal Sathi. Togetherness in every cup.</p>
+  </footer>
+
+  <script src="contact.js"></script>
+</body>
+</html>

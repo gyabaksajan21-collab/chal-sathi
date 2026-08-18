@@ -1,0 +1,515 @@
+/* ===================================================
+   Chal Sathi — Login Page
+=================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Crimson Text', serif;
+    color: #2d2e2d;
+}
+
+
+/* ===================================================
+   LOGIN PAGE
+=================================================== */
+
+.login-page {
+    position: relative;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    overflow: hidden;
+
+    background: #fc4d5a;
+}
+
+
+/* ===================================================
+   BACKGROUND IMAGE
+=================================================== */
+
+.bg-photo {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("img/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+
+/* Dark overlay */
+
+.bg-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    z-index: 1;
+}
+
+
+/* ===================================================
+   LOGIN CARD
+=================================================== */
+
+.login-card {
+    position: relative;
+
+    z-index: 2;
+
+    width: 550px;
+    max-width: 100%;
+
+    background: #fff;
+
+    border-radius: 20px;
+
+    padding: 34px 40px 30px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ===================================================
+   HEADER
+=================================================== */
+
+.card-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-bottom: 22px;
+}
+
+
+/* Heading */
+
+.login-card__title {
+    font-family: 'IM Fell Double Pica', serif;
+
+    font-weight: 400;
+
+    font-size: 24px;
+
+    line-height: 1.25;
+
+    text-align: center;
+
+    color: #e63946;
+
+    flex-shrink: 0;
+}
+
+
+/* Logo */
+
+.brand-mark {
+    width: 170px;
+    max-width: 40%;
+
+    height: auto;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+
+/* ===================================================
+   FORM
+=================================================== */
+
+.login-form {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* Field */
+
+.field {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 16px;
+}
+
+
+/* Labels */
+
+.field label {
+    font-family: 'IM Fell Double Pica', serif;
+
+    font-size: 15px;
+
+    margin-bottom: 8px;
+
+    color: #2d2e2d;
+}
+
+
+/* Inputs */
+
+.field input {
+    width: 100%;
+
+    border: 1px solid #000;
+
+    border-radius: 10px;
+
+    padding: 11px 14px;
+
+    font-family: 'Crimson Text', serif;
+
+    font-size: 17px;
+
+    color: #2d2e2d;
+
+    outline: none;
+
+    background: #fff;
+
+    transition:
+        border-color .15s ease,
+        box-shadow .15s ease;
+}
+
+
+/* Input focus */
+
+.field input:focus {
+    border-color: #e63a47;
+
+    box-shadow:
+        0 0 0 3px rgba(230, 58, 71, .15);
+}
+
+
+/* ===================================================
+   PASSWORD
+=================================================== */
+
+.password-wrap {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.password-wrap input {
+    padding-right: 48px;
+}
+
+
+/* Eye button */
+
+.eye-btn {
+    position: absolute;
+
+    right: 12px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 30px;
+    height: 30px;
+
+    background: transparent;
+
+    border: none;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    color: #555;
+
+    border-radius: 50%;
+
+    transition:
+        background .15s ease,
+        color .15s ease;
+}
+
+
+.eye-btn:hover {
+    background: #f5f5f5;
+
+    color: #e63a47;
+}
+
+
+.eye-btn i {
+    font-size: 16px;
+}
+
+
+/* ===================================================
+   ERROR
+=================================================== */
+
+.error-msg {
+    color: #c0202f;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 13px;
+
+    margin: -4px 0 6px;
+}
+
+
+/* ===================================================
+   FORGOT PASSWORD
+=================================================== */
+
+.forgot-link {
+    align-self: center;
+
+    color: #e64f4f;
+
+    font-family: 'IM Fell Double Pica', serif;
+
+    font-size: 15px;
+
+    text-decoration: none;
+
+    margin: 6px 0 16px;
+}
+
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ===================================================
+   SIGN IN BUTTON
+=================================================== */
+
+.signin-btn {
+    width: 100%;
+
+    background: #e63a47;
+
+    color: #fff;
+
+    border: none;
+
+    border-radius: 20px;
+
+    padding: 13px 14px;
+
+    font-family: 'IM Fell Double Pica', serif;
+
+    font-size: 22px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background .15s ease,
+        transform .1s ease;
+}
+
+
+.signin-btn:hover {
+    background: #d32b38;
+}
+
+
+.signin-btn:active {
+    transform: scale(.98);
+}
+
+
+/* ===================================================
+   DIVIDER
+=================================================== */
+
+.divider {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 18px 0 10px;
+
+    color: #555;
+
+    font-family: 'IM Fell Double Pica', serif;
+
+    font-size: 15px;
+}
+
+
+.divider::before,
+.divider::after {
+    content: '';
+
+    height: 1px;
+
+    background: #ddd;
+
+    flex: 1;
+}
+
+
+.divider span {
+    padding: 0 12px;
+}
+
+
+/* ===================================================
+   SOCIAL LOGIN
+=================================================== */
+
+.social-row {
+    display: flex;
+
+    gap: 20px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 8px 0 20px;
+}
+
+
+.social-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #2d2e2d;
+
+    text-decoration: none;
+
+    transition:
+        transform .15s ease,
+        background .15s ease,
+        color .15s ease;
+}
+
+
+.social-icon i {
+    font-size: 22px;
+}
+
+
+.social-icon:hover {
+    transform: translateY(-2px);
+
+    background: #f5f5f5;
+
+    color: #e63946;
+}
+
+
+/* ===================================================
+   SIGN UP
+=================================================== */
+
+.signup-row {
+    text-align: center;
+
+    font-family: 'Crimson Text', serif;
+
+    font-size: 16px;
+
+    color: #2d2e2d;
+}
+
+
+.signup-row a {
+    color: #e64f4f;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.signup-row a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===================================================
+   RESPONSIVE 
+=================================================== */
+
+@media (max-width: 720px) {
+
+    .login-page {
+        padding: 25px 15px;
+    }
+
+    .login-card {
+        width: 100%;
+
+        padding: 28px 24px;
+    }
+
+    .card-header {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .login-card__title {
+        font-size: 22px;
+    }
+
+    .brand-mark {
+        width: 150px;
+
+        max-width: 70%;
+    }
+}
