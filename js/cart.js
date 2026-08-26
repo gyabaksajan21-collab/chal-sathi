@@ -251,22 +251,22 @@ function getImage(name) {
     const images = {
 
         "Thakali Thali Set":
-            "img/Thakali Thali Set.jpg",
+            "../img/Thakali Thali Set.jpg",
 
         "C-Momo":
-            "img/C-momo.jpg",
+            "../img/C-momo.jpg",
 
         "Chicken Thukpa":
-            "img/Chicken Thukpa.jpg",
+            "../img/Chicken Thukpa.jpg",
 
         "Buff Choila":
-            "img/Buff-Choila.jpg",
+            "../img/Buff-Choila.jpg",
 
         "Non-Veg Ramen":
-            "img/Non-Veg Ramen.jpg",
+            "../img/Non-Veg Ramen.jpg",
 
         "Mango Juice":
-            "img/Mango Juice.jpg"
+            "../img/Mango Juice.jpg"
     };
 
 

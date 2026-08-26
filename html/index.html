@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&family=Crimson+Text&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
@@ -19,8 +19,6 @@
 
   <!-- Background -->
   <div class="bg-photo"></div>
-
-  <!-- Optional dark overlay -->
   <div class="bg-overlay"></div>
 
   <!-- Login Card -->
@@ -33,11 +31,7 @@
         CHAL SATHI
       </h1>
 
-      <img
-        class="brand-mark"
-        src="img/Logo.svg"
-        alt="Chal Sathi logo"
-      >
+      <img class="brand-mark" src="../img/Logo.svg" alt="Chal Sathi logo">
     </div>
 
     <form id="login-form" class="login-form" novalidate>
@@ -55,7 +49,7 @@
           required
         >
       </div>
-
+      
       <!-- Password -->
       <div class="field">
         <label for="password">PASSWORD</label>
@@ -71,7 +65,7 @@
             minlength="6"
             required
           >
-
+        
           <button type="button" id="toggle-password" class="eye-btn">
     <i id="eye-icon" class="fa-solid fa-eye"></i>
 </button>
@@ -132,6 +126,6 @@
 
 </div>
 
-  <script src="script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>

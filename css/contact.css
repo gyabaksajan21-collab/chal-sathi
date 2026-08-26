@@ -61,7 +61,7 @@
        Restaurant image + dark overlay
     */
     background:
-        url("img/bg.png");
+        url("../img/bg.png");
     background-size: cover;
     background-position: center;
 }

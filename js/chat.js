@@ -10,7 +10,7 @@ const conversations = {
         messages: [
             {
                 type: "bot",
-                image: "img/boy1.jpg",
+                image: "../img/boy1.jpg",
                 text: "Namaste! Welcome to Chal Sathi. I'm your host today. How can I make your experience better?",
                 time: "10:00 AM"
             },
@@ -23,7 +23,7 @@ const conversations = {
 
             {
                 type: "bot",
-                image: "img/boy2.jpg",
+                image: "../img/boy2.jpg",
                 text: 'We certainly do! This Saturday we\'re hosting a "Street Chai Stories" session at 4 PM. We\'d love for you to join. Would you like me to reserve a spot for you?',
                 time: "10:03 AM"
             }
@@ -37,7 +37,7 @@ const conversations = {
         messages: [
             {
                 type: "bot",
-                image: "img/boy.jpg",
+                image: "../img/boy.jpg",
                 text: "Namaste! Welcome to Chal Sathi Menu Support. How can I help you today?",
                 time: "9:30 AM"
             },
@@ -50,7 +50,7 @@ const conversations = {
 
             {
                 type: "bot",
-                image: "img/boy.jpg",
+                image: "../img/boy.jpg",
                 text: "Of course! We have momo, chowmein, snacks, drinks and several other dishes. Is there a particular item you'd like to know about?",
                 time: "9:33 AM"
             }
