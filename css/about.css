@@ -1,9 +1,7 @@
-/* =========================================================
-   CHAL SATHI — ABOUT PAGE
-========================================================= */
-/* =========================================================
+
+/* 
    ABOUT HERO
-========================================================= */
+*/
 .about-hero {
     position: relative;
     min-height: 560px;
@@ -16,9 +14,9 @@
     overflow: hidden;
 }
 
-/* =========================================================
+/* 
    LEFT CONTENT
-========================================================= */
+*/
 .about-hero__content {
     position: relative;
     z-index: 2;
@@ -30,7 +28,7 @@
 .about-hero h1 {
     margin: 0 0 22px;
     font-family: 'Crimson Text', serif;
-    font-size: clamp(44px, 5vw, 66px);
+    font-size: clamp(44px, 5vw, 66px); /* responsive */
     line-height: 1.05;
     font-weight: 700;
     color: #1c1c1c;
@@ -272,9 +270,9 @@
     color: #ffffff;
 }
 
-/* =========================================================
+/* 
    CARD BOTTOM LINE
-========================================================= */
+*/
 .pillar-card__rule {
     width: 45px;
     height: 3px;
@@ -287,9 +285,9 @@
     background: #ffffff;
 }
 
-/* =========================================================
+/*
    PILLAR ANIMATION
-========================================================= */
+ */
 .pillar-hidden {
     opacity: 0;
     transform: translateY(30px);
@@ -303,9 +301,7 @@
     transform: translateY(0);
 }
 
-/* =========================================================
-   RESPONSIVE — MOBILE
-========================================================= */
+
 @media (max-width: 720px) {
 
     .about-hero {

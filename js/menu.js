@@ -11,15 +11,16 @@ const sectionTitle = document.getElementById("section-title");
 const sectionSubtitle = document.getElementById("section-subtitle");
 
 
+// ---------------------------------------------------
 // Current selected category
+// ---------------------------------------------------
+
 let currentCategory = "nepali";
 
-// Current search text
-let searchText = "";
 
-// ===================================================
-// 3. FILTER MENU
-// ===================================================
+// ---------------------------------------------------
+// FILTER MENU
+// ---------------------------------------------------
 
 function filterMenu() {
 
@@ -30,19 +31,12 @@ function filterMenu() {
         const itemCategory =
             item.dataset.category.toLowerCase();
 
-        const itemName =
-            item.dataset.name.toLowerCase();
-
         // Check category
         const matchesCategory =
             itemCategory === currentCategory;
 
-        // Check search
-        const matchesSearch =
-            itemName.includes(searchText);
-
-        // Show item if both match
-        if (matchesCategory && matchesSearch) {
+        // Show item if category matches
+        if (matchesCategory) {
 
             item.style.display = "";
 
@@ -55,9 +49,9 @@ function filterMenu() {
     });
 
 
-    // =================================================
-    // 4. EMPTY STATE
-    // =================================================
+    // ---------------------------------------------------
+    // EMPTY STATE
+    // ---------------------------------------------------
 
     if (visibleItems === 0) {
 
@@ -70,51 +64,94 @@ function filterMenu() {
 }
 
 
-// ===================================================
-// 5. ADD TO CART
-// ===================================================
+// ---------------------------------------------------
+// CATEGORY BUTTONS
+// ---------------------------------------------------
+
+categoryButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        // Remove active class from all buttons
+        categoryButtons.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        // Add active class to clicked button
+        button.classList.add("active");
+
+        // Get selected category
+        currentCategory =
+            button.dataset.category.toLowerCase();
+
+        // Filter menu
+        filterMenu();
+    });
+});
+
+
+// ---------------------------------------------------
+// ADD TO CART
+// ---------------------------------------------------
 
 const addCartButtons =
     document.querySelectorAll(".btn-add-cart");
+
 addCartButtons.forEach((button) => {
+
     button.addEventListener("click", () => {
+
         // Find the menu item containing the button
         const menuItem =
             button.closest(".menu-item");
+
         // Get item information
         const name =
             menuItem.dataset.name;
+
         const price =
             parseFloat(button.dataset.price);
+
         // Create cart item
         const cartItem = {
             name: name,
             price: price,
             quantity: 1
         };
+
         // Get existing cart
         let cart =
             JSON.parse(localStorage.getItem("cart")) || [];
+
         // Check whether item already exists
         const existingItem =
             cart.find(item => item.name === name);
+
         if (existingItem) {
+
             // Increase quantity
             existingItem.quantity++;
+
         } else {
+
             // Add new item
             cart.push(cartItem);
         }
+
         // Save cart
         localStorage.setItem(
             "cart",
             JSON.stringify(cart)
         );
+
         // Change button temporarily
         const originalText =
             button.textContent;
+
         button.textContent = "Added ✓";
+
         button.classList.add("added");
+
         setTimeout(() => {
 
             button.textContent = originalText;
@@ -126,8 +163,8 @@ addCartButtons.forEach((button) => {
 });
 
 
-// ===================================================
-// 6. INITIAL MENU LOAD
-// ===================================================
+// ---------------------------------------------------
+// INITIAL MENU LOAD
+// ---------------------------------------------------
 
 filterMenu();
