@@ -1,12 +1,6 @@
-// ---------------------------------------------------
 // Chal Sathi - Home page behaviour
-// ---------------------------------------------------
 
-
-// ===================================================
-// 1. EXPLORE BUTTON
-// ===================================================
-
+// scroll smoothly to features section instead of jumping
 const exploreButton = document.querySelector(".btn-explore");
 
 if (exploreButton) {
@@ -15,7 +9,6 @@ if (exploreButton) {
 
         event.preventDefault();
 
-        // Find the feature section
         const featuresSection = document.querySelector(".features");
 
         if (featuresSection) {
@@ -31,37 +24,26 @@ if (exploreButton) {
 
 }
 
-
-// ===================================================
-// 2. FEATURE CARD INTERACTION
-// ===================================================
-
+// highlight the selected feature card, unhighlight the rest
 const featureCards = document.querySelectorAll(".feature-card");
 
 featureCards.forEach((card) => {
 
     card.addEventListener("click", () => {
 
-        // Remove active state from all cards
         featureCards.forEach((item) => {
             item.classList.remove("active");
         });
 
-        // Add active state to selected card
         card.classList.add("active");
 
     });
 
 });
 
-
-// ===================================================
-// 3. FEATURE CARD KEYBOARD ACCESSIBILITY
-// ===================================================
-
+// let keyboard users "click" cards with Enter/Space too
 featureCards.forEach((card) => {
 
-    // Make cards keyboard accessible
     card.setAttribute("tabindex", "0");
 
     card.addEventListener("keydown", (event) => {
@@ -69,7 +51,6 @@ featureCards.forEach((card) => {
         if (event.key === "Enter" || event.key === " ") {
 
             event.preventDefault();
-
             card.click();
 
         }
@@ -78,11 +59,7 @@ featureCards.forEach((card) => {
 
 });
 
-
-// ===================================================
-// 4. HERO ANIMATION
-// ===================================================
-
+// trigger the hero's entrance animation via CSS class
 const heroContent = document.querySelector(".hero__content");
 
 if (heroContent) {
@@ -91,21 +68,13 @@ if (heroContent) {
 
 }
 
-
-// ===================================================
-// 5. OPTIONAL NAVIGATION
-// ===================================================
-
-// If your page has navigation links, this allows
-// normal navigation without interfering with them.
-
+// close the mobile menu after tapping a nav link, if one's open
 const navLinks = document.querySelectorAll("nav a");
 
 navLinks.forEach((link) => {
 
     link.addEventListener("click", () => {
 
-        // Close mobile menu if one exists
         const mobileMenu = document.querySelector(".mobile-menu");
 
         if (mobileMenu) {
@@ -115,11 +84,6 @@ navLinks.forEach((link) => {
     });
 
 });
-
-
-// ===================================================
-// 6. PAGE LOADED
-// ===================================================
 
 document.addEventListener("DOMContentLoaded", () => {
 

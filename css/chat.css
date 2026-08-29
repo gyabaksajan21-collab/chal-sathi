@@ -1,12 +1,5 @@
-/* =========================================================
-   CHAL SATHI — CHAT PAGE
-   Large Desktop Chat Layout
-========================================================= */
 
-
-/* =========================================================
-   CHAT PAGE
-========================================================= */
+/* Chat page */
 
 .chat-page {
     width: 100%;
@@ -16,9 +9,7 @@
 }
 
 
-/* =========================================================
-   MAIN CHAT LAYOUT
-========================================================= */
+/* Chat layout */
 
 .chat-layout {
     width: 100%;
@@ -31,14 +22,11 @@
     border: 1px solid #e5e5e5;
     border-radius: 14px;
     overflow: hidden;
-    box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
 }
 
 
-/* =========================================================
-   SIDEBAR
-========================================================= */
+/* Sidebar */
 
 .chat-sidebar {
     background: #ffffff;
@@ -49,9 +37,7 @@
 }
 
 
-/* =========================================================
-   SEARCH BOX
-========================================================= */
+/* Search */
 
 .chat-search {
     position: relative;
@@ -66,9 +52,6 @@
     box-sizing: border-box;
 }
 
-
-/* Search icon */
-
 .chat-search svg {
     position: absolute;
     left: 14px;
@@ -77,9 +60,6 @@
     color: #888;
     pointer-events: none;
 }
-
-
-/* Search input */
 
 .chat-search input {
     width: 100%;
@@ -96,9 +76,7 @@
 }
 
 
-/* =========================================================
-   SIDEBAR TITLE
-========================================================= */
+/* Sidebar title */
 
 .chat-sidebar__label {
     display: block;
@@ -112,9 +90,7 @@
 }
 
 
-/* =========================================================
-   CONVERSATION LIST
-========================================================= */
+/* Conversation list */
 
 .conversation-list {
     display: flex;
@@ -123,29 +99,23 @@
 }
 
 
-/* =========================================================
-   CONVERSATION ITEM
-========================================================= */
+/* Conversation item */
 
 .conversation-item {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 18px 18px;
+    padding: 18px;
     min-height: 82px;
     box-sizing: border-box;
     border-left: 3px solid transparent;
     cursor: pointer;
-    transition:
-        background 0.15s ease,
-        border-color 0.15s ease;
+    transition: background 0.15s ease, border-color 0.15s ease;
 }
-
 
 .conversation-item:hover {
     background: #fafafa;
 }
-
 
 .conversation-item.active {
     background: #fff4f4;
@@ -153,9 +123,7 @@
 }
 
 
-/* =========================================================
-   CONVERSATION AVATAR
-========================================================= */
+/* Conversation avatar */
 
 .conversation-item__avatar {
     width: 48px;
@@ -169,7 +137,6 @@
     overflow: hidden;
 }
 
-
 .conversation-item__avatar img {
     width: 100%;
     height: 100%;
@@ -179,16 +146,12 @@
 }
 
 
-/* =========================================================
-   CONVERSATION BODY
-========================================================= */
+/* Conversation text */
 
 .conversation-item__body {
     flex: 1;
     min-width: 0;
 }
-
-/* Top row */
 
 .conversation-item__top {
     display: flex;
@@ -196,8 +159,6 @@
     justify-content: space-between;
     gap: 10px;
 }
-
-/* Name */
 
 .conversation-item__top h4 {
     margin: 0;
@@ -208,17 +169,12 @@
     color: #222;
 }
 
-/* Time */
-
 .conversation-item__top time {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
     color: #999;
     flex-shrink: 0;
 }
-
-
-/* Preview */
 
 .conversation-item__snippet {
     margin: 6px 0 0;
@@ -232,9 +188,7 @@
 }
 
 
-/* =========================================================
-   MAIN CHAT
-========================================================= */
+/* Main chat */
 
 .chat-main {
     display: flex;
@@ -245,9 +199,7 @@
 }
 
 
-/* =========================================================
-   CHAT HEADER
-========================================================= */
+/* Chat header */
 
 .chat-main__header {
     display: flex;
@@ -261,9 +213,7 @@
 }
 
 
-/* =========================================================
-   HEADER AVATAR
-========================================================= */
+/* Header avatar */
 
 .chat-main__header .avatar {
     width: 42px;
@@ -278,7 +228,6 @@
     position: relative;
 }
 
-
 .chat-main__header .avatar img {
     width: 100%;
     height: 100%;
@@ -288,7 +237,7 @@
 }
 
 
-/* Online indicator */
+/* Online dot */
 
 .chat-main__header .avatar::after {
     content: "";
@@ -303,9 +252,7 @@
 }
 
 
-/* =========================================================
-   CHAT TITLE
-========================================================= */
+/* Chat title */
 
 .chat-main__header h3 {
     flex: 1;
@@ -317,9 +264,7 @@
 }
 
 
-/* =========================================================
-   HEADER BUTTONS
-========================================================= */
+/* Header buttons */
 
 .chat-main__header .icon-btn {
     width: 38px;
@@ -332,17 +277,13 @@
     justify-content: center;
     cursor: pointer;
     border-radius: 50%;
-    transition:
-        background 0.15s ease,
-        color 0.15s ease;
+    transition: background 0.15s ease, color 0.15s ease;
 }
-
 
 .chat-main__header .icon-btn:hover {
     background: #f3f3f3;
     color: #222;
 }
-
 
 .chat-main__header .icon-btn svg {
     width: 19px;
@@ -350,9 +291,7 @@
 }
 
 
-/* =========================================================
-   MESSAGES AREA
-========================================================= */
+/* Messages */
 
 .chat-messages {
     flex: 1;
@@ -366,9 +305,7 @@
 }
 
 
-/* =========================================================
-   SCROLLBAR
-========================================================= */
+/* Scrollbar */
 
 .chat-messages::-webkit-scrollbar {
     width: 6px;
@@ -387,9 +324,8 @@
     background: #c5c5c5;
 }
 
-/* =========================================================
-   TODAY DIVIDER
-========================================================= */
+
+/* Day divider */
 
 .chat-day-divider {
     align-self: center;
@@ -402,9 +338,7 @@
 }
 
 
-/* =========================================================
-   MESSAGE
-========================================================= */
+/* Message */
 
 .chat-msg {
     display: flex;
@@ -414,24 +348,20 @@
     animation: messageAppear 0.2s ease;
 }
 
-
 @keyframes messageAppear {
-
     from {
         opacity: 0;
         transform: translateY(6px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
-
 }
 
 
-/* =========================================================
-   MESSAGE AVATAR
-========================================================= */
+/* Message avatar */
 
 .chat-msg .avatar {
     width: 34px;
@@ -446,7 +376,6 @@
     flex-shrink: 0;
 }
 
-
 .chat-msg .avatar img {
     width: 100%;
     height: 100%;
@@ -456,9 +385,7 @@
 }
 
 
-/* =========================================================
-   MESSAGE BUBBLE
-========================================================= */
+/* Message bubble */
 
 .chat-msg__bubble {
     display: flex;
@@ -467,23 +394,15 @@
     max-width: 100%;
 }
 
-/* Message text */
-
 .chat-msg__bubble p {
     margin: 0;
-
     padding: 14px 18px;
-
     border-radius: 12px;
-
     font-family: 'Inter', sans-serif;
-
     font-size: 13px;
     line-height: 1.6;
     word-wrap: break-word;
 }
-
-/* Time */
 
 .chat-msg__bubble time {
     font-family: 'Inter', sans-serif;
@@ -491,9 +410,8 @@
     color: #999;
 }
 
-/* =========================================================
-   BOT MESSAGE
-========================================================= */
+
+/* Bot message */
 
 .chat-msg--bot .chat-msg__bubble p {
     background: #eeeeee;
@@ -501,20 +419,17 @@
     border-bottom-left-radius: 4px;
 }
 
-/* =========================================================
-   USER MESSAGE
-========================================================= */
+
+/* User message */
 
 .chat-msg--user {
     align-self: flex-end;
     flex-direction: row-reverse;
 }
 
-
 .chat-msg--user .chat-msg__bubble {
     align-items: flex-end;
 }
-
 
 .chat-msg--user .chat-msg__bubble p {
     background: var(--red);
@@ -523,9 +438,7 @@
 }
 
 
-/* =========================================================
-   INPUT AREA
-========================================================= */
+/* Input area */
 
 .chat-input-row {
     display: flex;
@@ -539,9 +452,7 @@
 }
 
 
-/* =========================================================
-   ATTACHMENT BUTTON
-========================================================= */
+/* Attachment button */
 
 .chat-input-row .icon-btn {
     width: 38px;
@@ -558,20 +469,17 @@
     transition: background 0.15s ease;
 }
 
-
 .chat-input-row .icon-btn:hover {
     background: #f3f3f3;
 }
-
 
 .chat-input-row .icon-btn svg {
     width: 19px;
     height: 19px;
 }
 
-/* =========================================================
-   MESSAGE INPUT
-========================================================= */
+
+/* Message input */
 
 .chat-input-row input {
     flex: 1;
@@ -586,11 +494,8 @@
     font-size: 12px;
     color: #333;
     outline: none;
-    transition:
-        border-color 0.15s ease,
-        background 0.15s ease;
+    transition: border-color 0.15s ease, background 0.15s ease;
 }
-
 
 .chat-input-row input::placeholder {
     color: #999;
@@ -601,9 +506,8 @@
     background: #ffffff;
 }
 
-/* =========================================================
-   SEND BUTTON
-========================================================= */
+
+/* Send button */
 
 .chat-send-btn {
     width: 44px;
@@ -618,22 +522,17 @@
     justify-content: center;
     cursor: pointer;
     flex-shrink: 0;
-    transition:
-        background 0.15s ease,
-        transform 0.15s ease;
+    transition: background 0.15s ease, transform 0.15s ease;
 }
-
 
 .chat-send-btn:hover {
     background: var(--red-dark);
     transform: translateY(-1px);
 }
 
-
 .chat-send-btn:active {
     transform: scale(0.95);
 }
-
 
 .chat-send-btn svg {
     width: 19px;
@@ -641,96 +540,73 @@
 }
 
 
-/* =========================================================
-   RESPONSIVE — MOBILE
-========================================================= */
+/* Mobile */
 
 @media (max-width: 720px) {
-
     .chat-page {
         padding: 15px 10px 40px;
     }
 
-
     .chat-layout {
         border-radius: 10px;
-
         min-height: 650px;
     }
-
 
     .chat-sidebar {
         max-height: 210px;
     }
 
-
     .conversation-item {
         padding: 14px;
     }
 
-
     .conversation-item__avatar {
         width: 40px;
         height: 40px;
-
         min-width: 40px;
     }
-
 
     .conversation-item__top h4 {
         font-size: 12px;
     }
 
-
     .conversation-item__snippet {
         font-size: 10px;
     }
-
 
     .chat-main__header {
         padding: 12px 14px;
     }
 
-
     .chat-main__header .avatar {
         width: 36px;
         height: 36px;
-
         min-width: 36px;
     }
-
 
     .chat-main__header h3 {
         font-size: 13px;
     }
 
-
     .chat-messages {
         padding: 20px 14px;
-
         gap: 20px;
     }
-
 
     .chat-msg {
         max-width: 90%;
     }
 
-
     .chat-msg__bubble p {
         padding: 11px 14px;
-
         font-size: 12px;
     }
-
 
     .chat-input-row {
         padding: 10px;
     }
 
-
     .chat-input-row input {
         font-size: 11px;
     }
-
 }

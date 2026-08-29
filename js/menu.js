@@ -1,8 +1,5 @@
-// ---------------------------------------------------
 // Chal Sathi - Menu page behaviour
-// ---------------------------------------------------
 
-// Get elements
 const categoryButtons = document.querySelectorAll(".cat-btn");
 const menuItems = document.querySelectorAll(".menu-item");
 const emptyState = document.getElementById("empty-state");
@@ -10,36 +7,23 @@ const emptyState = document.getElementById("empty-state");
 const sectionTitle = document.getElementById("section-title");
 const sectionSubtitle = document.getElementById("section-subtitle");
 
-
-// ---------------------------------------------------
-// Current selected category
-// ---------------------------------------------------
-
+// nepali is the default category shown on load
 let currentCategory = "nepali";
 
-
-// ---------------------------------------------------
-// FILTER MENU
-// ---------------------------------------------------
-
+// shows/hides menu items based on the current category
 function filterMenu() {
 
     let visibleItems = 0;
 
     menuItems.forEach((item) => {
 
-        const itemCategory =
-            item.dataset.category.toLowerCase();
+        const itemCategory = item.dataset.category.toLowerCase();
 
-        // Check category
-        const matchesCategory =
-            itemCategory === currentCategory;
+        const matchesCategory = itemCategory === currentCategory;
 
-        // Show item if category matches
         if (matchesCategory) {
 
             item.style.display = "";
-
             visibleItems++;
 
         } else {
@@ -48,11 +32,7 @@ function filterMenu() {
         }
     });
 
-
-    // ---------------------------------------------------
-    // EMPTY STATE
-    // ---------------------------------------------------
-
+    // show a message if the category has nothing in it
     if (visibleItems === 0) {
 
         emptyState.hidden = false;
@@ -63,108 +43,73 @@ function filterMenu() {
     }
 }
 
-
-// ---------------------------------------------------
-// CATEGORY BUTTONS
-// ---------------------------------------------------
-
+// switch category on button click
 categoryButtons.forEach((button) => {
 
     button.addEventListener("click", () => {
 
-        // Remove active class from all buttons
         categoryButtons.forEach((btn) => {
             btn.classList.remove("active");
         });
 
-        // Add active class to clicked button
         button.classList.add("active");
 
-        // Get selected category
-        currentCategory =
-            button.dataset.category.toLowerCase();
+        currentCategory = button.dataset.category.toLowerCase();
 
-        // Filter menu
         filterMenu();
     });
 });
 
-
-// ---------------------------------------------------
-// ADD TO CART
-// ---------------------------------------------------
-
-const addCartButtons =
-    document.querySelectorAll(".btn-add-cart");
+// add-to-cart buttons on each menu item
+const addCartButtons = document.querySelectorAll(".btn-add-cart");
 
 addCartButtons.forEach((button) => {
 
     button.addEventListener("click", () => {
 
-        // Find the menu item containing the button
-        const menuItem =
-            button.closest(".menu-item");
+        const menuItem = button.closest(".menu-item");
 
-        // Get item information
-        const name =
-            menuItem.dataset.name;
+        const name = menuItem.dataset.name;
+        const price = parseFloat(button.dataset.price);
 
-        const price =
-            parseFloat(button.dataset.price);
-
-        // Create cart item
         const cartItem = {
             name: name,
             price: price,
             quantity: 1
         };
 
-        // Get existing cart
-        let cart =
-            JSON.parse(localStorage.getItem("cart")) || [];
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        // Check whether item already exists
-        const existingItem =
-            cart.find(item => item.name === name);
+        const existingItem = cart.find(item => item.name === name);
 
         if (existingItem) {
 
-            // Increase quantity
             existingItem.quantity++;
 
         } else {
 
-            // Add new item
             cart.push(cartItem);
         }
 
-        // Save cart
         localStorage.setItem(
             "cart",
             JSON.stringify(cart)
         );
 
-        // Change button temporarily
-        const originalText =
-            button.textContent;
+        // quick visual confirmation on the button
+        const originalText = button.textContent;
 
         button.textContent = "Added ✓";
-
         button.classList.add("added");
 
         setTimeout(() => {
 
             button.textContent = originalText;
-
             button.classList.remove("added");
 
         }, 1200);
     });
 });
 
-
-// ---------------------------------------------------
-// INITIAL MENU LOAD
-// ---------------------------------------------------
-
+// show the default category on page load
 filterMenu();

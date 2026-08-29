@@ -1,6 +1,4 @@
-/* =========================================
-   CONVERSATION DATA
-========================================= */
+// conversation data - keyed by conversation name
 
 const conversations = {
 
@@ -59,64 +57,45 @@ const conversations = {
 };
 
 
-/* =========================================
-   GET HTML ELEMENTS
-========================================= */
-
-const conversationItems =
-    document.querySelectorAll(".conversation-item");
-
-const chatMessages =
-    document.getElementById("chat-messages");
-
-const chatTitle =
-    document.getElementById("chat-title");
+// element refs
+const conversationItems = document.querySelectorAll(".conversation-item");
+const chatMessages = document.getElementById("chat-messages");
+const chatTitle = document.getElementById("chat-title");
 
 
-/* =========================================
-   CLICK CONVERSATION
-========================================= */
-
+// switch conversation on click
 conversationItems.forEach(item => {
 
     item.addEventListener("click", function () {
 
-        // Remove active class from all conversations
+        // clear active state from all, then highlight the one clicked
         conversationItems.forEach(conversation => {
             conversation.classList.remove("active");
         });
 
-        // Add active class to clicked conversation
         this.classList.add("active");
 
-        // Get conversation name
-        const conversationName =
-            this.dataset.conversation;
+        const conversationName = this.dataset.conversation;
 
-        // Load selected conversation
         loadConversation(conversationName);
     });
 
 });
 
 
-/* =========================================
-   LOAD CONVERSATION
-========================================= */
-
+// swaps in a conversation's messages + title
 function loadConversation(name) {
 
     const conversation = conversations[name];
 
     if (!conversation) return;
 
-    // Change title
     chatTitle.textContent = conversation.title;
 
-    // Clear old messages
+    // wipe out whatever was there before
     chatMessages.innerHTML = "";
 
-    // Today divider
+    // "Today" divider at the top
     const divider = document.createElement("span");
 
     divider.className = "chat-day-divider";
@@ -124,7 +103,6 @@ function loadConversation(name) {
 
     chatMessages.appendChild(divider);
 
-    // Create messages
     conversation.messages.forEach(message => {
 
         createMessage(
@@ -136,42 +114,30 @@ function loadConversation(name) {
 
     });
 
-    // Scroll to bottom
-    chatMessages.scrollTop =
-        chatMessages.scrollHeight;
+    // jump to the latest message
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
 
-/* =========================================
-   CREATE MESSAGE
-========================================= */
-
+// builds a single chat bubble (bot messages get an avatar, user ones don't)
 function createMessage(type, text, time, imageSrc) {
 
     const message = document.createElement("div");
 
-    message.className =
-        "chat-msg chat-msg--" + type;
+    message.className = "chat-msg chat-msg--" + type;
 
 
-    /* =================================
-       BOT AVATAR
-    ================================= */
-
+    // only bot messages show an avatar
     if (type === "bot") {
 
-        const avatar =
-            document.createElement("div");
+        const avatar = document.createElement("div");
 
         avatar.className = "avatar";
 
 
-        const image =
-            document.createElement("img");
+        const image = document.createElement("img");
 
-        // Use the image specified for this message
         image.src = imageSrc;
-
         image.alt = "Chal Sathi";
 
 
@@ -181,29 +147,20 @@ function createMessage(type, text, time, imageSrc) {
     }
 
 
-    /* =================================
-       MESSAGE BUBBLE
-    ================================= */
+    // the actual message bubble (text + timestamp)
+    const bubble = document.createElement("div");
 
-    const bubble =
-        document.createElement("div");
-
-    bubble.className =
-        "chat-msg__bubble";
+    bubble.className = "chat-msg__bubble";
 
 
-    const paragraph =
-        document.createElement("p");
+    const paragraph = document.createElement("p");
 
-    paragraph.textContent =
-        text;
+    paragraph.textContent = text;
 
 
-    const timeElement =
-        document.createElement("time");
+    const timeElement = document.createElement("time");
 
-    timeElement.textContent =
-        time;
+    timeElement.textContent = time;
 
 
     bubble.appendChild(paragraph);
@@ -215,9 +172,5 @@ function createMessage(type, text, time, imageSrc) {
 }
 
 
-
-/* =========================================
-   LOAD SUPPORT BY DEFAULT
-========================================= */
-
+// show the support chat first when the page loads
 loadConversation("support");

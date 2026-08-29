@@ -1,7 +1,4 @@
-// ===================================================
-// CHAL SATHI — SHARED JAVASCRIPT
-// Mobile Hamburger Navigation
-// ===================================================
+// Chal Sathi — shared JS: mobile hamburger nav
 
 const hamburgerBtn = document.getElementById("hamburgerBtn");
 const siteNav = document.getElementById("siteNav");
@@ -12,6 +9,7 @@ if (hamburgerBtn && siteNav) {
 
         siteNav.classList.toggle("mobile-open");
 
+        // swap the bars icon for an X when the menu's open
         const icon = hamburgerBtn.querySelector("i");
 
         if (siteNav.classList.contains("mobile-open")) {

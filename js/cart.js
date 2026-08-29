@@ -1,6 +1,4 @@
-// ---------------------------------------------------
 // Chal Sathi - Cart page behaviour
-// ---------------------------------------------------
 
 const cartContainer = document.querySelector(".cart-container");
 const summarySubtotal = document.querySelector(".summary-row:nth-child(1) span:last-child");
@@ -8,26 +6,16 @@ const summaryTotal = document.querySelector(".summary-row--total span:last-child
 
 const DELIVERY_FEE = 10;
 
-
-// ===================================================
-// 1. GET CART FROM LOCAL STORAGE
-// ===================================================
-
+// grab cart from storage (or start empty if nothing saved yet)
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-
-// ===================================================
-// 2. DISPLAY CART
-// ===================================================
-
+// renders all cart items + empty state, then refreshes the summary
 function displayCart() {
-    // Find the area where cart items are displayed
-    const cartItemsContainer =
-        document.querySelector(".cart-items");
+    const cartItemsContainer = document.querySelector(".cart-items");
     if (!cartItemsContainer) return;
-    // Clear existing items
+
     cartItemsContainer.innerHTML = "";
-    // Check if cart is empty
+
     if (cart.length === 0) {
         cartItemsContainer.innerHTML = `
             <div class="empty-cart">
@@ -41,17 +29,12 @@ function displayCart() {
         `;
 
         updateSummary();
-
         return;
     }
 
-    // Create each cart item
     cart.forEach((item, index) => {
-
         const cartItem = document.createElement("div");
-
         cartItem.className = "cart-item";
-
 
         cartItem.innerHTML = `
             <div class="cart-item__image">
@@ -90,226 +73,116 @@ function displayCart() {
             </div>
         `;
 
-
         cartItemsContainer.appendChild(cartItem);
     });
 
-
-    // Add quantity button events
     addQuantityEvents();
-
-    // Update summary
     updateSummary();
 }
 
-
-// ===================================================
-// 3. QUANTITY BUTTONS
-// ===================================================
-
+// wires up the +/- buttons after each render (since they get recreated every time)
 function addQuantityEvents() {
 
-    const minusButtons =
-        document.querySelectorAll(".quantity-minus");
+    const minusButtons = document.querySelectorAll(".quantity-minus");
+    const plusButtons = document.querySelectorAll(".quantity-plus");
 
-    const plusButtons =
-        document.querySelectorAll(".quantity-plus");
-
-
-    // Minus
     minusButtons.forEach((button) => {
-
         button.addEventListener("click", () => {
-
-            const index =
-                Number(button.dataset.index);
+            const index = Number(button.dataset.index);
 
             if (cart[index].quantity > 1) {
-
                 cart[index].quantity--;
-
             } else {
-
-                // Remove item when quantity reaches zero
+                // hit zero, so just remove it from the cart
                 cart.splice(index, 1);
             }
 
-
             saveCart();
-
             displayCart();
         });
     });
 
-
-    // Plus
     plusButtons.forEach((button) => {
-
         button.addEventListener("click", () => {
-
-            const index =
-                Number(button.dataset.index);
-
+            const index = Number(button.dataset.index);
             cart[index].quantity++;
 
             saveCart();
-
             displayCart();
         });
     });
 }
 
-
-// ===================================================
-// 4. UPDATE ORDER SUMMARY
-// ===================================================
-
+// recalculates subtotal, delivery fee and total, then updates the DOM
 function updateSummary() {
 
     let subtotal = 0;
 
-
-    // Calculate subtotal
     cart.forEach((item) => {
-
-        subtotal +=
-            Number(item.price) *
-            Number(item.quantity);
-
+        subtotal += Number(item.price) * Number(item.quantity);
     });
 
+    // no delivery fee if the cart's empty
+    const deliveryFee = cart.length > 0 ? DELIVERY_FEE : 0;
 
-    // Delivery fee
-    const deliveryFee =
-        cart.length > 0 ? DELIVERY_FEE : 0;
+    const total = subtotal + deliveryFee;
 
-
-    // Total
-    const total =
-        subtotal + deliveryFee;
-
-
-    // Update subtotal
     if (summarySubtotal) {
-
-        summarySubtotal.textContent =
-            `Rs. ${formatPrice(subtotal)}`;
+        summarySubtotal.textContent = `Rs. ${formatPrice(subtotal)}`;
     }
 
-
-    // Update delivery fee
-    const deliveryElement =
-        document.querySelector(
-            ".summary-row:nth-child(2) span:last-child"
-        );
+    const deliveryElement = document.querySelector(
+        ".summary-row:nth-child(2) span:last-child"
+    );
 
     if (deliveryElement) {
-
-        deliveryElement.textContent =
-            `Rs. ${formatPrice(deliveryFee)}`;
+        deliveryElement.textContent = `Rs. ${formatPrice(deliveryFee)}`;
     }
 
-
-    // Update total
     if (summaryTotal) {
-
-        summaryTotal.textContent =
-            `Rs. ${formatPrice(total)}`;
+        summaryTotal.textContent = `Rs. ${formatPrice(total)}`;
     }
 }
 
-
-// ===================================================
-// 5. SAVE CART
-// ===================================================
-
+// persist cart to localStorage
 function saveCart() {
-
-    localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
-    );
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-
-// ===================================================
-// 6. FORMAT PRICE
-// ===================================================
-
+// always show 2 decimal places
 function formatPrice(price) {
-
     return Number(price).toFixed(2);
 }
 
-
-// ===================================================
-// 7. GET IMAGE
-// ===================================================
-
+// image lookup by item name, falls back to a default if missing
 function getImage(name) {
 
     const images = {
-
-        "Thakali Thali Set":
-            "../img/Thakali Thali Set.jpg",
-
-        "C-Momo":
-            "../img/C-momo.jpg",
-
-        "Chicken Thukpa":
-            "../img/Chicken Thukpa.jpg",
-
-        "Buff Choila":
-            "../img/Buff-Choila.jpg",
-
-        "Non-Veg Ramen":
-            "../img/Non-Veg Ramen.jpg",
-
-        "Mango Juice":
-            "../img/Mango Juice.jpg"
+        "Thakali Thali Set": "../img/Thakali Thali Set.jpg",
+        "C-Momo": "../img/C-momo.jpg",
+        "Chicken Thukpa": "../img/Chicken Thukpa.jpg",
+        "Buff Choila": "../img/Buff-Choila.jpg",
+        "Non-Veg Ramen": "../img/Non-Veg Ramen.jpg",
+        "Mango Juice": "../img/Mango Juice.jpg"
     };
-
 
     return images[name] || "img/default.jpg";
 }
 
-
-// ===================================================
-// 8. GET DESCRIPTION
-// ===================================================
-
+// short description lookup by item name
 function getDescription(name) {
 
     const descriptions = {
-
-        "Thakali Thali Set":
-            "Traditional Nepali platter",
-
-        "C-Momo":
-            "Spicy and tangy chicken dumplings",
-
-        "Chicken Thukpa":
-            "Warm Himalayan noodle soup",
-
-        "Buff Choila":
-            "Smoked buffalo meat with authentic spices",
-
-        "Non-Veg Ramen":
-            "Hand-pulled noodles in rich broth",
-
-        "Mango Juice":
-            "Fresh and refreshing mango juice"
+        "Thakali Thali Set": "Traditional Nepali platter",
+        "C-Momo": "Spicy and tangy chicken dumplings",
+        "Chicken Thukpa": "Warm Himalayan noodle soup",
+        "Buff Choila": "Smoked buffalo meat with authentic spices",
+        "Non-Veg Ramen": "Hand-pulled noodles in rich broth",
+        "Mango Juice": "Fresh and refreshing mango juice"
     };
-
 
     return descriptions[name] || "";
 }
 
-
-
-
-// ===================================================
-// 9. INITIAL LOAD
-// ===================================================
-
+// render on page load
 displayCart();

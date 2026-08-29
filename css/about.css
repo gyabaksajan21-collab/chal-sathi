@@ -1,7 +1,4 @@
-
-/* 
-   ABOUT HERO
-*/
+/* About hero */
 .about-hero {
     position: relative;
     min-height: 560px;
@@ -14,9 +11,7 @@
     overflow: hidden;
 }
 
-/* 
-   LEFT CONTENT
-*/
+/* Hero content */
 .about-hero__content {
     position: relative;
     z-index: 2;
@@ -28,7 +23,7 @@
 .about-hero h1 {
     margin: 0 0 22px;
     font-family: 'Crimson Text', serif;
-    font-size: clamp(44px, 5vw, 66px); /* responsive */
+    font-size: clamp(44px, 5vw, 66px);
     line-height: 1.05;
     font-weight: 700;
     color: #1c1c1c;
@@ -44,9 +39,7 @@
     color: #5b403f;
 }
 
-/* =========================================================
-   JOURNEY BUTTON
-========================================================= */
+/* Journey button */
 .about-hero .btn-journey {
     display: inline-flex;
     align-items: center;
@@ -77,9 +70,7 @@
     transform: scale(0.97);
 }
 
-/* =========================================================
-   RIGHT IMAGE — NO BORDER / NO DECORATION
-========================================================= */
+/* Hero image */
 .about-hero__image {
     position: relative;
     z-index: 2;
@@ -103,25 +94,21 @@
 
 .about-hero__image:hover img {
     transform: translateY(-5px);
-    box-shadow:
-        0 25px 55px rgba(39, 23, 23, 0.24);
+    box-shadow: 0 25px 55px rgba(39, 23, 23, 0.24);
 }
 
-/* =========================================================
-   MISSION / VISION / VALUES
-========================================================= */
+/* Mission, vision and values */
 .about-pillars {
     position: relative;
     max-width: 1250px;
     margin: 0 auto;
     padding: 100px 35px 110px;
     display: grid;
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 28px;
 }
 
-/* Small section decoration */
+/* Section label */
 .about-pillars::before {
     content: "WHAT WE BELIEVE";
     position: absolute;
@@ -135,9 +122,7 @@
     color: var(--red);
 }
 
-/* =========================================================
-   PILLAR CARDS
-========================================================= */
+/* Pillar cards */
 .pillar-card {
     position: relative;
     min-height: 300px;
@@ -152,41 +137,30 @@
 
 .pillar-card:hover {
     transform: translateY(-8px);
-    box-shadow:
-        0 18px 40px rgba(39, 23, 23, 0.12);
+    box-shadow: 0 18px 40px rgba(39, 23, 23, 0.12);
 }
 
-/* Soft cards */
+/* Light cards */
 .pillar-card--soft {
     background: #fff5f4;
-    box-shadow:
-        0 8px 25px rgba(39, 23, 23, 0.05);
+    box-shadow: 0 8px 25px rgba(39, 23, 23, 0.05);
 }
 
-/* Center card */
+/* Highlighted card */
 .pillar-card--accent {
-    background:
-        linear-gradient(
-            145deg,
-            #e63946,
-            #c92535
-        );
+    background: linear-gradient(145deg, #e63946, #c92535);
     padding: 44px 34px;
     color: #ffffff;
-    box-shadow:
-        0 18px 40px rgba(230, 57, 70, 0.25);
+    box-shadow: 0 18px 40px rgba(230, 57, 70, 0.25);
     transform: translateY(-18px);
 }
 
 .pillar-card--accent:hover {
     transform: translateY(-25px);
-    box-shadow:
-        0 25px 50px rgba(230, 57, 70, 0.32);
+    box-shadow: 0 25px 50px rgba(230, 57, 70, 0.32);
 }
 
-/* =========================================================
-   CARD ICON
-========================================================= */
+/* Card icon */
 .pillar-card__icon {
     width: 54px;
     height: 54px;
@@ -205,9 +179,7 @@
     color: #ffffff;
 }
 
-/* =========================================================
-   CARD TITLE
-========================================================= */
+/* Card title */
 .pillar-card h3 {
     margin: 0 0 14px;
     font-family: 'Crimson Text', serif;
@@ -220,9 +192,7 @@
     color: #ffffff;
 }
 
-/* =========================================================
-   CARD TEXT
-========================================================= */
+/* Card text */
 .pillar-card p {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -235,9 +205,7 @@
     color: rgba(255, 255, 255, 0.90);
 }
 
-/* =========================================================
-   VALUES LIST
-========================================================= */
+/* Values list */
 .pillar-card ul {
     list-style: none;
     display: flex;
@@ -256,7 +224,6 @@
     color: #664d4b;
 }
 
-/* Check / dot */
 .pillar-card ul li::before {
     content: "✓";
     position: absolute;
@@ -270,9 +237,7 @@
     color: #ffffff;
 }
 
-/* 
-   CARD BOTTOM LINE
-*/
+/* Card bottom line */
 .pillar-card__rule {
     width: 45px;
     height: 3px;
@@ -285,9 +250,7 @@
     background: #ffffff;
 }
 
-/*
-   PILLAR ANIMATION
- */
+/* Card animation */
 .pillar-hidden {
     opacity: 0;
     transform: translateY(30px);
@@ -301,9 +264,8 @@
     transform: translateY(0);
 }
 
-
+/* Mobile */
 @media (max-width: 720px) {
-
     .about-hero {
         min-height: auto;
         flex-direction: column;

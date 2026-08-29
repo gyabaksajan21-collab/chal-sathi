@@ -1,16 +1,9 @@
-/* ===================================================
-   Chal Sathi — Favorites page
-=================================================== */
-
+/* Favorites page */
 .favorites-page {
     padding: 40px 68px 96px;
 }
 
-
-/* ==============================
-   PAGE HEADER
-============================== */
-
+/* Page heading */
 .favorites-page__header {
     max-width: 640px;
     margin-bottom: 32px;
@@ -21,7 +14,6 @@
     font-weight: 700;
     font-size: 32px;
     color: var(--red);
-
     margin: 0 0 6px;
 }
 
@@ -29,287 +21,161 @@
     font-family: 'Inter', sans-serif;
     font-size: 15px;
     color: var(--ink-soft);
-
     margin: 0;
 }
 
-
-/* ==============================
-   FAVORITES GRID
-============================== */
-
+/* Favorite items */
 .favorites-grid {
     max-width: 1313px;
-
     column-count: 2;
     column-gap: 24px;
 }
 
-
-/* ==============================
-   FAVORITE CARD
-============================== */
-
+/* Individual favorite card */
 .favorite-card {
     break-inside: avoid;
-
     margin-bottom: 24px;
-
     background: #fff;
-
     border: 1px solid var(--card-border);
     border-radius: 16px;
-
     overflow: hidden;
-
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-
-/* ==============================
-   FAVORITE IMAGE
-============================== */
-
+/* Card image */
 .favorite-card__img {
     position: relative;
-
     height: 160px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
 }
-
-
-/* Actual image */
 
 .favorite-card__img > img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
 }
 
-
-/* ==============================
-   HEART BUTTON
-============================== */
-
+/* Favorite/remove button */
 .favorite-card__heart {
     position: absolute;
-
     top: 12px;
     right: 12px;
-
     width: 32px;
     height: 32px;
-
     border: none;
     border-radius: 50%;
-
     background: #fff;
-
     color: var(--red);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-
     cursor: pointer;
-
     z-index: 5;
-
     transition:
         transform 0.15s ease,
         background 0.15s ease,
         color 0.15s ease;
 }
 
-
-/* Font Awesome heart */
-
 .favorite-card__heart i {
     font-size: 15px;
 }
 
-
-/* Heart hover */
-
 .favorite-card__heart:hover {
     transform: scale(1.08);
-
     background: var(--red);
     color: #fff;
 }
 
-
-/* ==============================
-   UPCOMING EVENT TAG
-============================== */
-
+/* Event label shown over the image */
 .favorite-card__tag {
     position: absolute;
-
     top: 12px;
     left: 12px;
-
     background: rgba(0, 0, 0, 0.55);
-
     color: #fff;
-
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 11px;
-
     letter-spacing: 0.5px;
     text-transform: uppercase;
-
     padding: 5px 10px;
-
     border-radius: 9999px;
-
     z-index: 4;
 }
 
-
-/* ==============================
-   CARD BODY
-============================== */
-
+/* Card content */
 .favorite-card__body {
     padding: 18px 20px 20px;
 }
 
-
-/* ==============================
-   EYEBROW
-============================== */
-
 .favorite-card__eyebrow {
     font-family: 'Inter', sans-serif;
-
     font-style: italic;
     font-weight: 600;
-
     font-size: 12px;
-
     letter-spacing: 0.5px;
-
     text-transform: uppercase;
-
     color: var(--ink-soft);
-
     margin: 0 0 6px;
-
     display: block;
 }
-
-
-/* ==============================
-   CARD TITLE
-============================== */
 
 .favorite-card__body h3 {
     font-family: 'Inter', sans-serif;
-
     font-weight: 700;
-
     font-size: 17px;
-
     color: #151c27;
-
     margin: 0 0 6px;
 }
 
-
-/* ==============================
-   DESCRIPTION
-============================== */
-
+/* Description text */
 .favorite-card__body p.description {
     font-family: 'Inter', sans-serif;
-
     font-size: 13px;
-
     line-height: 1.5;
-
     color: var(--ink-soft);
-
     margin: 0 0 10px;
 }
 
-
-/* ==============================
-   PRICE
-============================== */
-
+/* Food price */
 .favorite-card__price {
     font-family: 'Inter', sans-serif;
-
     font-weight: 700;
-
     font-size: 15px;
-
     color: #b22222;
-
     margin: 0 0 14px;
-
     display: block;
 }
 
-
-/* ==============================
-   EVENT META
-============================== */
-
+/* Event date and location */
 .favorite-card__meta {
     font-family: 'Inter', sans-serif;
-
     font-size: 13px;
-
     color: var(--ink-soft);
-
     margin: 0 0 14px;
-
     display: flex;
-
     align-items: center;
-
     gap: 4px;
 }
 
-
-/* ==============================
-   ORDER AGAIN BUTTON
-============================== */
-
+/* Order button */
 .btn-order-again {
     width: 100%;
-
     background: var(--red);
-
     color: #fff;
-
     border: none;
-
     font-family: 'Inter', sans-serif;
-
     font-weight: 600;
-
     font-size: 14px;
-
     padding: 11px;
-
     border-radius: 8px;
-
     cursor: pointer;
-
     transition: background 0.15s ease;
 }
 
@@ -317,32 +183,18 @@
     background: var(--red-dark);
 }
 
-
-/* ==============================
-   NOTIFY BUTTON
-============================== */
-
+/* Notification button */
 .btn-notify {
     width: 100%;
-
     background: none;
-
     border: 2px solid var(--red);
-
     color: var(--red);
-
     font-family: 'Inter', sans-serif;
-
     font-weight: 600;
-
     font-size: 14px;
-
     padding: 9px;
-
     border-radius: 8px;
-
     cursor: pointer;
-
     transition:
         background 0.15s ease,
         color 0.15s ease;
@@ -350,17 +202,11 @@
 
 .btn-notify:hover {
     background: var(--red);
-
     color: #fff;
 }
 
-
-/* ==============================
-   RESPONSIVE
-============================== */
-
+/* Mobile layout */
 @media (max-width: 720px) {
-
     .favorites-page {
         padding: 24px 20px 56px;
     }

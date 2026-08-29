@@ -1,16 +1,10 @@
-/* ===================================================
-   Chal Sathi — Contact page
-=================================================== */
 
+/* Contact page */
 .contact-page {
     padding: 56px 68px 96px;
 }
 
-
-/* ===================================================
-   PAGE HEADER
-=================================================== */
-
+/* Page heading */
 .contact-page__header {
     max-width: 640px;
     margin-bottom: 40px;
@@ -32,11 +26,7 @@
     margin: 0;
 }
 
-
-/* ===================================================
-   CONTACT LAYOUT
-=================================================== */
-
+/* Contact section */
 .contact-layout {
     width: 100%;
     max-width: 1313px;
@@ -47,30 +37,18 @@
     align-items: start;
 }
 
-
-/* ===================================================
-   LEFT: PHOTO + FORM
-=================================================== */
-
+/* Image area and form */
 .contact-visual {
     position: relative;
     min-height: 420px;
     border-radius: 20px;
     overflow: hidden;
-    /*
-       Restaurant image + dark overlay
-    */
-    background:
-        url("../img/bg.png");
+    background: url("../img/bg.png");
     background-size: cover;
     background-position: center;
 }
 
-
-/* ===================================================
-   CONTACT FORM CARD
-=================================================== */
-
+/* Contact form */
 .contact-form-card {
     position: absolute;
     top: 10px;
@@ -91,11 +69,7 @@
     margin: 0 0 20px;
 }
 
-
-/* ===================================================
-   FORM FIELDS
-=================================================== */
-
+/* Form fields */
 .contact-field {
     display: flex;
     flex-direction: column;
@@ -126,28 +100,20 @@
                 box-shadow 0.15s ease;
 }
 
-
-/* Focus */
-
+/* Input focus */
 .contact-field input:focus,
 .contact-field textarea:focus {
     border-color: var(--red);
     box-shadow: 0 0 0 2px rgba(200, 16, 46, 0.08);
 }
 
-
-/* Textarea */
-
+/* Message box */
 .contact-field textarea {
     min-height: 80px;
     resize: vertical;
 }
 
-
-/* ===================================================
-   SEND BUTTON
-=================================================== */
-
+/* Send button */
 .btn-send-message {
     width: 100%;
     background: var(--red-dark);
@@ -171,21 +137,12 @@
     transform: scale(0.98);
 }
 
-
-/* ===================================================
-   RIGHT SIDE
-=================================================== */
-
+/* Right side panels */
 .contact-side {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
-
-
-/* ===================================================
-   PANELS
-=================================================== */
 
 .contact-panel {
     border-radius: 16px;
@@ -193,11 +150,7 @@
     box-sizing: border-box;
 }
 
-
-/* ===================================================
-   OPENING HOURS
-=================================================== */
-
+/* Opening hours */
 .contact-panel--hours {
     background: #fff1f1;
 }
@@ -212,9 +165,6 @@
     align-items: center;
     gap: 8px;
 }
-
-
-/* Hours */
 
 .hours-row {
     display: flex;
@@ -240,11 +190,7 @@
     text-align: right;
 }
 
-
-/* ===================================================
-   CONNECT WITH US
-=================================================== */
-
+/* Social section */
 .contact-panel--connect {
     background: #17273a;
 }
@@ -257,17 +203,12 @@
     margin: 0 0 16px;
 }
 
-
-/* Social grid */
-
+/* Social links */
 .connect-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
 }
-
-
-/* Social buttons */
 
 .connect-btn {
     display: flex;
@@ -289,15 +230,9 @@
     transform: translateY(-2px);
 }
 
-
-/* Font Awesome icons */
-
 .connect-btn i {
     font-size: 20px;
 }
-
-
-/* Text */
 
 .connect-btn span {
     font-family: 'Inter', sans-serif;
@@ -305,13 +240,8 @@
     font-weight: 600;
 }
 
-
-/* ===================================================
-   RESPONSIVE
-=================================================== */
-
+/* Mobile layout */
 @media (max-width: 720px) {
-
     .contact-page {
         padding: 32px 20px 60px;
     }
@@ -326,9 +256,7 @@
 
     .contact-form-card {
         position: static;
-
         width: auto;
-
         margin: 24px;
     }
 }

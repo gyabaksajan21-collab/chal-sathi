@@ -1,9 +1,6 @@
-/* ===================================================
-   Chal Sathi — Home page
-=================================================== */
+/* Home page */
 
-/* -------- Hero -------- */
-
+/* Hero section */
 .hero {
   position: relative;
   min-height: 650px;
@@ -22,7 +19,7 @@
   background: rgba(0, 0, 0, 0.35);
 }
 
-/* Center the complete hero content */
+/* Hero content */
 .hero__content {
   position: relative;
   z-index: 1;
@@ -36,7 +33,7 @@
   text-align: center;
 }
 
-/* Title */
+/* Main heading */
 .hero__title {
   display: flex;
   flex-direction: column;
@@ -47,57 +44,41 @@
   margin: 0 0 24px;
 }
 
-/* Words */
+/* Heading text */
 .script-line {
   font-family: 'Caveat', cursive;
   font-weight: 700;
   font-size: 80px;
   line-height: 1;
-
   color: #fff;
-
   display: block;
-
-  /* Remove the previous offsets */
   margin: 0 !important;
   align-self: center !important;
-
   text-align: center;
 }
 
-/* Subtitle */
+/* Hero description */
 .hero__subtitle {
   font-family: 'Crimson Text', serif;
   font-weight: 700;
   font-size: 20px;
-
   color: #fff;
-
   text-align: center;
-
   max-width: 660px;
-
   margin: 0 auto 32px;
 }
 
 /* Explore button */
 .btn-explore {
   display: block;
-
   width: fit-content;
-
   margin: 0 auto;
-
   background: var(--red);
   color: #fff;
-
   font-family: 'Crimson Text', serif;
   font-size: 30px;
-
   padding: 10px 40px;
-
   border-radius: 20px 0 20px 0;
-
   transition: background 0.15s ease, transform 0.1s ease;
 }
 
@@ -109,11 +90,8 @@
   transform: scale(0.98);
 }
 
-
-/* -------- Mobile -------- */
-
+/* Mobile hero */
 @media (max-width: 720px) {
-
   .hero {
     min-height: 600px;
   }
@@ -135,8 +113,8 @@
     padding: 10px 30px;
   }
 }
-/* -------- Feature cards -------- */
 
+/* Feature cards */
 .features {
   display: flex;
   gap: 24px;
@@ -166,9 +144,21 @@
   color: #333;
 }
 
+/* Smaller screens */
 @media (max-width: 800px) {
-  .hero__content { padding: 40px 6%; }
-  .script-line { font-size: 48px; }
-  .line2 { margin-left: 0; }
-  .line3 { margin-right: 0; }
+  .hero__content {
+    padding: 40px 6%;
+  }
+
+  .script-line {
+    font-size: 48px;
+  }
+
+  .line2 {
+    margin-left: 0;
+  }
+
+  .line3 {
+    margin-right: 0;
+  }
 }

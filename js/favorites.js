@@ -1,45 +1,31 @@
-// ---------------------------------------------------
 // Chal Sathi - Favorites Page Behaviour
-// ---------------------------------------------------
-
-// ===================================================
-// 1. GET ALL FAVORITE CARDS
-// ===================================================
 
 const favoriteCards = document.querySelectorAll(".favorite-card");
 
-
-// ===================================================
-// 2. REMOVE ITEM FROM FAVORITES
-// ===================================================
-
+// heart icon click = remove that item from favorites
 document.querySelectorAll(".favorite-card__heart").forEach((heartButton) => {
 
     heartButton.addEventListener("click", () => {
 
-        // Find the card containing this heart button
         const card = heartButton.closest(".favorite-card");
 
         if (!card) return;
 
-        // Get item name
         const nameElement = card.querySelector("h3");
 
         if (!nameElement) return;
 
         const itemName = nameElement.textContent.trim();
 
-        // Remove from localStorage favorites
         removeFromFavorites(itemName);
 
-        // Add a small animation
+        // quick fade-out before removing the card
         card.style.opacity = "0";
         card.style.transform = "scale(0.95)";
 
         setTimeout(() => {
 
             card.remove();
-
             checkEmptyFavorites();
 
         }, 200);
@@ -48,11 +34,7 @@ document.querySelectorAll(".favorite-card__heart").forEach((heartButton) => {
 
 });
 
-
-// ===================================================
-// 3. ORDER AGAIN
-// ===================================================
-
+// "order again" - pulls the item's info off the card and adds it to cart
 document.querySelectorAll(".btn-order-again").forEach((button) => {
 
     button.addEventListener("click", () => {
@@ -61,7 +43,6 @@ document.querySelectorAll(".btn-order-again").forEach((button) => {
 
         if (!card) return;
 
-        // Get product information
         const nameElement = card.querySelector("h3");
         const priceElement = card.querySelector(".favorite-card__price");
         const imageElement = card.querySelector("img");
@@ -70,7 +51,7 @@ document.querySelectorAll(".btn-order-again").forEach((button) => {
 
         const name = nameElement.textContent.trim();
 
-        // Convert "Rs. 250" into number
+        // strip "Rs." and commas to get a plain number
         const price = parseFloat(
             priceElement.textContent
                 .replace("Rs.", "")
@@ -82,7 +63,6 @@ document.querySelectorAll(".btn-order-again").forEach((button) => {
             ? imageElement.getAttribute("src")
             : "";
 
-        // Add product to cart
         addToCart({
             name: name,
             price: price,
@@ -90,7 +70,7 @@ document.querySelectorAll(".btn-order-again").forEach((button) => {
             quantity: 1
         });
 
-        // Change button temporarily
+        // brief visual confirmation on the button itself
         const originalText = button.textContent;
 
         button.textContent = "Added to Cart ✓";
@@ -107,65 +87,48 @@ document.querySelectorAll(".btn-order-again").forEach((button) => {
 
 });
 
-
-// ===================================================
-// 4. ADD ITEM TO CART
-// ===================================================
-
+// adds a product to cart, bumping quantity if it's already there
 function addToCart(product) {
 
-    // Get existing cart
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Check whether item already exists
     const existingItem = cart.find(
         item => item.name === product.name
     );
 
     if (existingItem) {
 
-        // Increase quantity
         existingItem.quantity += 1;
 
     } else {
 
-        // Add new item
         cart.push(product);
 
     }
 
-    // Save cart
     localStorage.setItem("cart", JSON.stringify(cart));
 
     console.log("Added to cart:", product.name);
 
 }
 
-
-// ===================================================
-// 5. REMOVE ITEM FROM FAVORITES
-// ===================================================
-
+// pulls an item out of the saved favorites list
 function removeFromFavorites(itemName) {
 
-    let favorites =
-        JSON.parse(localStorage.getItem("favorites")) || [];
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-    // Remove matching item
     favorites = favorites.filter(
         item => {
 
-            // If favorites contains objects
+            // handles both object entries and plain string entries
             if (typeof item === "object") {
                 return item.name !== itemName;
             }
 
-            // If favorites contains simple strings
             return item !== itemName;
         }
     );
 
-    // Save updated favorites
     localStorage.setItem(
         "favorites",
         JSON.stringify(favorites)
@@ -173,11 +136,7 @@ function removeFromFavorites(itemName) {
 
 }
 
-
-// ===================================================
-// 6. NOTIFY ME BUTTON
-// ===================================================
-
+// "notify me" for event cards - just a demo, no real backend yet
 document.querySelectorAll(".btn-notify").forEach((button) => {
 
     button.addEventListener("click", () => {
@@ -190,16 +149,14 @@ document.querySelectorAll(".btn-notify").forEach((button) => {
             card.querySelector("h3")?.textContent.trim()
             || "this event";
 
-        // Change button
         button.textContent = "Notification Set ✓";
 
         button.style.background = "var(--red)";
         button.style.color = "#fff";
 
-        // Prevent clicking multiple times
+        // don't let them spam the button
         button.disabled = true;
 
-        // Demo notification
         alert(
             `You will be notified about "${eventName}".`
         );
@@ -208,32 +165,22 @@ document.querySelectorAll(".btn-notify").forEach((button) => {
 
 });
 
-
-// ===================================================
-// 7. CHECK IF FAVORITES ARE EMPTY
-// ===================================================
-
+// shows a placeholder message once all favorite cards are gone
 function checkEmptyFavorites() {
 
-    const remainingCards =
-        document.querySelectorAll(".favorite-card");
-
-    const grid =
-        document.querySelector(".favorites-grid");
+    const remainingCards = document.querySelectorAll(".favorite-card");
+    const grid = document.querySelector(".favorites-grid");
 
     if (!grid) return;
 
-    // Remove old empty message
-    const oldMessage =
-        document.querySelector(".empty-favorites");
+    const oldMessage = document.querySelector(".empty-favorites");
 
     if (remainingCards.length === 0) {
 
-        // Don't create duplicate message
+        // don't add the message twice
         if (oldMessage) return;
 
-        const message =
-            document.createElement("div");
+        const message = document.createElement("div");
 
         message.className = "empty-favorites";
 
@@ -254,27 +201,14 @@ function checkEmptyFavorites() {
 
 }
 
-
-// ===================================================
-// 8. LOAD FAVORITES
-// ===================================================
-
-// This function can be used if your favorites
-// are stored dynamically in localStorage.
-
+// just logs what's saved for now - useful if favorites end up rendered dynamically later
 function loadFavorites() {
 
-    const favorites =
-        JSON.parse(localStorage.getItem("favorites")) || [];
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
     console.log("Saved favorites:", favorites);
 
 }
-
-
-// ===================================================
-// 9. START
-// ===================================================
 
 loadFavorites();
 

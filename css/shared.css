@@ -1,8 +1,4 @@
-/* ===================================================
-   Chal Sathi — shared styles (header, footer, tokens)
-   Include this file on every page, then add a
-   page-specific stylesheet after it.
-=================================================== */
+/* Shared styles for Chal Sathi pages */
 
 :root {
   --red: #e63946;
@@ -18,115 +14,94 @@
   --btn-blue: #3d627d;
 }
 
-* { 
-  margin: 0; 
-  padding: 0; 
-  box-sizing: border-box; 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Crimson Text', serif;
-  
 }
 
-a { 
+a {
   text-decoration: none;
-  color: inherit; }
-button { 
-  font-family: inherit; 
-  cursor: pointer; }
+  color: inherit;
+}
 
-/* ------------------- Header / nav ------------------- */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Header */
 
 .site-header {
   display: flex;
   align-items: center;
-
-  /* Bigger header */
   height: 105px;
   min-height: 105px;
-
   padding: 0 55px;
   background: #ffffff;
-
   gap: 55px;
-
   position: relative;
   z-index: 100;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* ------------------- Logo ------------------- */
+/* Logo */
 
 .site-header .logo {
-    width: 150px;
-    height: 105px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-    overflow: visible;
+  width: 150px;
+  height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: visible;
 }
 
 .site-header .logo img {
-    width: 150px;
-    height: 105px;
-
-    object-fit: contain;
-    display: block;
-
-    /* Makes the actual logo appear larger */
-    transform: scale(1.7);
+  width: 150px;
+  height: 105px;
+  object-fit: contain;
+  display: block;
+  transform: scale(1.7);
 }
 
-/* ------------------- Navigation ------------------- */
+/* Navigation */
 
 .site-nav {
   display: flex;
   align-items: center;
-
   gap: 12px;
   flex: 1;
-
   height: 100%;
 }
 
 .site-nav .nav-link {
   font-family: 'Crimson Text', serif;
-
-  /* Larger text */
   font-size: 19px;
   font-weight: 400;
-
   padding: 20px 25px;
-
   color: var(--ink);
-
   border-radius: 20px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   height: 66px;
-
   transition: all 0.2s ease;
 }
 
-/* Active HOME button */
+/* Home link when selected */
 
 .site-nav .nav-link.active {
   background: var(--red);
   color: #fff;
-
   font-weight: 700;
-
   border-radius: 25px 0 25px 0;
 }
 
-/* Hover effect */
 .site-nav .nav-link:hover {
   color: var(--red);
 }
@@ -136,28 +111,22 @@ button {
   background: var(--red-dark);
 }
 
-/* ------------------- Right side icons ------------------- */
+/* Icons on the right */
 
 .site-header__icons {
   display: flex;
   align-items: center;
-
   gap: 25px;
 }
-
-/* Notification */
 
 .icon-btn {
   background: none;
   border: none;
-
   width: 48px;
   height: 48px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   position: relative;
 }
 
@@ -167,23 +136,18 @@ button {
   color: var(--ink);
 }
 
-/* Profile circle */
+/* Profile button */
 
 .avatar-btn {
   width: 50px;
   height: 50px;
-
   border-radius: 50%;
-
   background: #e63946;
   color: white;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-decoration: none;
-
   transition: transform 0.2s ease;
 }
 
@@ -196,7 +160,7 @@ button {
   color: white;
 }
 
-/* ------------------- Responsive ------------------- */
+/* Tablet */
 
 @media (max-width: 1100px) {
   .site-header {
@@ -225,10 +189,8 @@ button {
   .site-header {
     height: auto;
     min-height: 90px;
-
     flex-wrap: wrap;
     gap: 12px;
-
     padding: 12px 20px;
   }
 
@@ -259,7 +221,7 @@ button {
   }
 }
 
-/* ------------------- Footer ------------------- */
+/* Footer */
 
 .site-footer {
   background: #003049;
@@ -307,22 +269,22 @@ button {
 }
 
 .social-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
 }
 
 .social-row .social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-size: 16px;
 }
 
 .footer-tagline {
-  border-top: 1px solid rgba(226,226,226,.1);
+  border-top: 1px solid rgba(226, 226, 226, .1);
   text-align: center;
   color: #fff;
   font-family: 'Crimson Text', serif;
@@ -332,7 +294,7 @@ button {
 }
 
 .footer-copyright {
-  border-top: 1px solid rgba(226,226,226,.1);
+  border-top: 1px solid rgba(226, 226, 226, .1);
   text-align: center;
   color: var(--footer-text-dim);
   font-family: 'Crimson Text', serif;
@@ -340,36 +302,22 @@ button {
   padding: 25px 24px 24px;
 }
 
-/* ===================================================
-   RESPONSIVE — MOBILE
-=================================================== */
-
-/* ===================================================
-   MOBILE HAMBURGER NAVIGATION
-=================================================== */
+/* Hamburger button */
 
 .hamburger-btn {
   display: none;
-
   background: none;
   border: none;
-
   width: 42px;
   height: 42px;
-
   align-items: center;
   justify-content: center;
-
   color: var(--ink);
   font-size: 24px;
-
   cursor: pointer;
 }
 
-
-/* ===================================================
-   MOBILE
-=================================================== */
+/* Mobile */
 
 @media (max-width: 720px) {
 
@@ -377,52 +325,39 @@ button {
     width: 100%;
     height: 75px;
     min-height: 75px;
-
     padding: 8px 15px;
-
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-
     gap: 10px;
   }
 
-
-  /* ---------- Logo ---------- */
+  /* Logo on mobile */
 
   .site-header .logo {
     width: 75px;
     height: 58px;
-
     flex-shrink: 0;
   }
 
   .site-header .logo img {
     width: 80px;
     height: 58px;
-
     transform: scale(1.2);
   }
 
-
-  /* ---------- Hide desktop navigation ---------- */
+  /* Hide the normal nav on mobile */
 
   .site-nav {
     display: none;
   }
 
-
-  /* ---------- Right icons ---------- */
-
   .site-header__icons {
     margin-left: auto;
-
     display: flex;
     align-items: center;
-
     gap: 4px;
   }
-
 
   .icon-btn {
     width: 40px;
@@ -433,7 +368,6 @@ button {
     font-size: 20px;
   }
 
-
   .avatar-btn {
     width: 42px;
     height: 42px;
@@ -443,67 +377,46 @@ button {
     font-size: 18px;
   }
 
-
-  /* ---------- Hamburger ---------- */
+  /* Show hamburger on mobile */
 
   .hamburger-btn {
     display: flex;
   }
 
-
   .hamburger-btn i {
     font-size: 24px;
   }
 
-
-  /* ---------- Mobile menu ---------- */
+  /* Dropdown menu */
 
   .site-nav.mobile-open {
     display: flex;
-
     position: absolute;
-
     top: 75px;
     left: 0;
-
     width: 100%;
-
     background: #ffffff;
-
     flex-direction: column;
     align-items: stretch;
-
     gap: 0;
-
     padding: 10px 20px 15px;
-
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
-
     z-index: 999;
   }
-
 
   .site-nav.mobile-open .nav-link {
     width: 100%;
     height: 48px;
-
     padding: 10px 15px;
-
     justify-content: flex-start;
-
     font-size: 17px;
-
     border-radius: 10px;
-
     margin-bottom: 3px;
   }
 
-
   .site-nav.mobile-open .nav-link.active {
     border-radius: 10px;
-
     background: var(--red);
     color: #ffffff;
   }
-
 }

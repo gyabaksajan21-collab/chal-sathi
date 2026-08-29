@@ -1,78 +1,33 @@
-// ---------------------------------------------------
 // Chal Sathi - Checkout page behaviour
-// ---------------------------------------------------
 
 const DELIVERY_FEE = 10;
 
+// form elements
+const checkoutForm = document.getElementById("checkout-form");
+const fullNameInput = document.getElementById("full-name");
+const phoneInput = document.getElementById("phone");
+const addressInput = document.getElementById("address");
+const deliveryTimeInput = document.getElementById("delivery-time");
+const orderPopup = document.getElementById("order-popup");
+const popupOk = document.getElementById("popup-ok");
 
-// ===================================================
-// GET ELEMENTS
-// ===================================================
+// order summary elements
+const summaryList = document.getElementById("summary-list");
+const summarySubtotal = document.getElementById("sum-subtotal");
+const summaryDelivery = document.getElementById("sum-delivery");
+const summaryTotal = document.getElementById("sum-total");
 
-const checkoutForm =
-    document.getElementById("checkout-form");
+// grab cart from storage (or start empty if nothing saved yet)
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-const fullNameInput =
-    document.getElementById("full-name");
-
-const phoneInput =
-    document.getElementById("phone");
-
-const addressInput =
-    document.getElementById("address");
-
-const deliveryTimeInput =
-    document.getElementById("delivery-time");
-
-const orderPopup =
-    document.getElementById("order-popup");
-
-const popupOk =
-    document.getElementById("popup-ok");
-
-
-// ===================================================
-// ORDER SUMMARY ELEMENTS
-// ===================================================
-
-const summaryList =
-    document.getElementById("summary-list");
-
-const summarySubtotal =
-    document.getElementById("sum-subtotal");
-
-const summaryDelivery =
-    document.getElementById("sum-delivery");
-
-const summaryTotal =
-    document.getElementById("sum-total");
-
-
-// ===================================================
-// GET CART FROM LOCAL STORAGE
-// ===================================================
-
-let cart =
-    JSON.parse(localStorage.getItem("cart")) || [];
-
-
-// ===================================================
-// 1. DISPLAY ORDER ITEMS
-// ===================================================
-
+// renders the order summary list + empty state, then totals
 function displayOrderSummary() {
 
     if (!summaryList) return;
 
-
-    // Clear old items
     summaryList.innerHTML = "";
 
-
-    // -----------------------------------------------
-    // EMPTY CART
-    // -----------------------------------------------
-
+    // nothing in the cart - show empty state and bail
     if (cart.length === 0) {
 
         summaryList.innerHTML = `
@@ -90,28 +45,17 @@ function displayOrderSummary() {
         `;
 
         updateTotals();
-
         return;
     }
 
-
-    // -----------------------------------------------
-    // DISPLAY CART ITEMS
-    // -----------------------------------------------
-
+    // otherwise render each item in the cart
     cart.forEach((item) => {
 
-        const itemTotal =
-            Number(item.price) *
-            Number(item.quantity);
+        const itemTotal = Number(item.price) * Number(item.quantity);
 
+        const summaryItem = document.createElement("div");
 
-        const summaryItem =
-            document.createElement("div");
-
-        summaryItem.className =
-            "summary-item";
-
+        summaryItem.className = "summary-item";
 
         summaryItem.innerHTML = `
             <div class="summary-item__info">
@@ -130,112 +74,58 @@ function displayOrderSummary() {
             </strong>
         `;
 
-
         summaryList.appendChild(summaryItem);
 
     });
 
-
-    // Update amount
     updateTotals();
 }
 
-
-// ===================================================
-// 2. CALCULATE TOTALS
-// ===================================================
-
+// works out subtotal, delivery fee, discount and total, then updates the DOM
 function updateTotals() {
 
     let subtotal = 0;
 
-
-    // Calculate subtotal
     cart.forEach((item) => {
-
-        subtotal +=
-            Number(item.price) *
-            Number(item.quantity);
-
+        subtotal += Number(item.price) * Number(item.quantity);
     });
 
+    // no delivery fee if cart's empty
+    const deliveryFee = cart.length > 0 ? DELIVERY_FEE : 0;
 
-    // Delivery fee only when cart has items
-    const deliveryFee =
-        cart.length > 0
-            ? DELIVERY_FEE
-            : 0;
-
-
-    // Discount
+    // placeholder for now, not wired up to anything yet
     const discount = 0;
 
-
-    // Final total
-    const total =
-        subtotal +
-        deliveryFee -
-        discount;
-
-
-    // -----------------------------------------------
-    // UPDATE HTML
-    // -----------------------------------------------
+    const total = subtotal + deliveryFee - discount;
 
     if (summarySubtotal) {
-
-        summarySubtotal.textContent =
-            `Rs. ${formatPrice(subtotal)}`;
-
+        summarySubtotal.textContent = `Rs. ${formatPrice(subtotal)}`;
     }
-
 
     if (summaryDelivery) {
-
-        summaryDelivery.textContent =
-            `Rs. ${formatPrice(deliveryFee)}`;
-
+        summaryDelivery.textContent = `Rs. ${formatPrice(deliveryFee)}`;
     }
-
 
     if (summaryTotal) {
-
-        summaryTotal.textContent =
-            `Rs. ${formatPrice(total)}`;
-
+        summaryTotal.textContent = `Rs. ${formatPrice(total)}`;
     }
 }
 
-
-// ===================================================
-// 3. FORMAT PRICE
-// ===================================================
-
+// always show 2 decimal places
 function formatPrice(price) {
-
     return Number(price).toFixed(2);
-
 }
 
-
-// ===================================================
-// 4. PLACE ORDER
-// ===================================================
-
+// handle order submission
 if (checkoutForm) {
 
     checkoutForm.addEventListener(
         "submit",
         function (event) {
 
-            // Stop page refresh
-            event.preventDefault();
+            event.preventDefault(); // no page reload
 
-
-            // ---------------------------------------
-            // CHECK CART
-            // ---------------------------------------
-
+            // can't order with an empty cart
             if (cart.length === 0) {
 
                 alert(
@@ -245,28 +135,12 @@ if (checkoutForm) {
                 return;
             }
 
+            const fullName = fullNameInput.value.trim();
+            const phone = phoneInput.value.trim();
+            const address = addressInput.value.trim();
+            const deliveryTime = deliveryTimeInput.value;
 
-            // ---------------------------------------
-            // GET FORM VALUES
-            // ---------------------------------------
-
-            const fullName =
-                fullNameInput.value.trim();
-
-            const phone =
-                phoneInput.value.trim();
-
-            const address =
-                addressInput.value.trim();
-
-            const deliveryTime =
-                deliveryTimeInput.value;
-
-
-            // ---------------------------------------
-            // VALIDATE NAME
-            // ---------------------------------------
-
+            // name is required
             if (fullName === "") {
 
                 alert(
@@ -274,15 +148,10 @@ if (checkoutForm) {
                 );
 
                 fullNameInput.focus();
-
                 return;
             }
 
-
-            // ---------------------------------------
-            // VALIDATE PHONE
-            // ---------------------------------------
-
+            // phone is required and needs to be 10 digits
             if (phone === "") {
 
                 alert(
@@ -290,10 +159,8 @@ if (checkoutForm) {
                 );
 
                 phoneInput.focus();
-
                 return;
             }
-
 
             if (!/^[0-9]{10}$/.test(phone)) {
 
@@ -302,15 +169,10 @@ if (checkoutForm) {
                 );
 
                 phoneInput.focus();
-
                 return;
             }
 
-
-            // ---------------------------------------
-            // VALIDATE ADDRESS
-            // ---------------------------------------
-
+            // address is required
             if (address === "") {
 
                 alert(
@@ -318,20 +180,13 @@ if (checkoutForm) {
                 );
 
                 addressInput.focus();
-
                 return;
             }
 
-
-            // ---------------------------------------
-            // PAYMENT METHOD
-            // ---------------------------------------
-
-            const selectedPayment =
-                document.querySelector(
-                    'input[name="payment"]:checked'
-                );
-
+            // make sure a payment method is picked
+            const selectedPayment = document.querySelector(
+                'input[name="payment"]:checked'
+            );
 
             if (!selectedPayment) {
 
@@ -342,38 +197,18 @@ if (checkoutForm) {
                 return;
             }
 
-
-            // ---------------------------------------
-            // CALCULATE FINAL TOTAL
-            // ---------------------------------------
-
+            // recalculate totals at submit time (source of truth for the order)
             let subtotal = 0;
 
-
             cart.forEach((item) => {
-
-                subtotal +=
-                    Number(item.price) *
-                    Number(item.quantity);
-
+                subtotal += Number(item.price) * Number(item.quantity);
             });
 
-
-            const deliveryFee =
-                DELIVERY_FEE;
-
+            const deliveryFee = DELIVERY_FEE;
             const discount = 0;
+            const total = subtotal + deliveryFee - discount;
 
-            const total =
-                subtotal +
-                deliveryFee -
-                discount;
-
-
-            // ---------------------------------------
-            // ORDER INFORMATION
-            // ---------------------------------------
-
+            // build the order object
             const order = {
 
                 customer: {
@@ -382,102 +217,57 @@ if (checkoutForm) {
                     address: address
                 },
 
-                deliveryTime:
-                    deliveryTime,
-
-                payment:
-                    selectedPayment.value,
-
-                items:
-                    cart,
-
-                subtotal:
-                    subtotal,
-
-                deliveryFee:
-                    deliveryFee,
-
-                discount:
-                    discount,
-
-                total:
-                    total,
-
-                orderDate:
-                    new Date().toISOString()
+                deliveryTime: deliveryTime,
+                payment: selectedPayment.value,
+                items: cart,
+                subtotal: subtotal,
+                deliveryFee: deliveryFee,
+                discount: discount,
+                total: total,
+                orderDate: new Date().toISOString()
             };
 
-
-            // Show in console for testing
+            // just logging for now - no backend yet
             console.log(
                 "Chal Sathi Order:",
                 order
             );
 
-
-            // ---------------------------------------
-            // SHOW SUCCESS POPUP
-            // ---------------------------------------
-
+            // show the "order placed" popup
             if (orderPopup) {
-
                 orderPopup.classList.add("show");
-
             }
 
         }
     );
 }
 
-
-// ===================================================
-// 5. CLOSE POPUP
-// ===================================================
-
+// close popup + reset everything once the user confirms
 if (popupOk) {
 
     popupOk.addEventListener(
         "click",
         function () {
 
-            // Close popup
             if (orderPopup) {
-
                 orderPopup.classList.remove("show");
-
             }
 
-
-            // ---------------------------------------
-            // CLEAR CART AFTER ORDER
-            // ---------------------------------------
-
+            // clear cart now that the order's placed
             localStorage.removeItem("cart");
-
             cart = [];
 
-
-            // Reset form
             if (checkoutForm) {
-
                 checkoutForm.reset();
-
             }
 
-
-            // Reset summary
             displayOrderSummary();
-
         }
     );
 
 }
 
-
-// ===================================================
-// 6. CLOSE POPUP BY CLICKING OUTSIDE
-// ===================================================
-
+// let clicking outside the popup close it too
 if (orderPopup) {
 
     orderPopup.addEventListener(
@@ -485,9 +275,7 @@ if (orderPopup) {
         function (event) {
 
             if (event.target === orderPopup) {
-
                 orderPopup.classList.remove("show");
-
             }
 
         }
@@ -495,9 +283,5 @@ if (orderPopup) {
 
 }
 
-
-// ===================================================
-// 7. INITIAL LOAD
-// ===================================================
-
+// render summary on page load
 displayOrderSummary();
