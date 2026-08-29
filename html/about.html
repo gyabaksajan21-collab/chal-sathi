@@ -15,23 +15,29 @@
 <body>
   <!-- ============ Shared header ============ -->
   <header class="site-header">
-    <a href="home.html" class="logo"><img src="../img/Logo.svg" alt="Chal Sathi logo"></a>
-    <nav class="site-nav">
-      <a href="home.html" class="nav-link">HOME</a>
-      <a href="about.html" class="nav-link active">ABOUT</a>
-      <a href="menu.html" class="nav-link">MENU</a>
-      <a href="chat.html" class="nav-link">CHAT</a>
-      <a href="contact.html" class="nav-link">CONTACT</a>
-    </nav>
-    <div class="site-header__icons">
-      <a href="notifications.html" class="icon-btn" aria-label="Notifictaions">
-        <i class="fa-regular fa-bell"></i>      
-      </a>
-      <a href="profile.html" class="avatar-btn" aria-label="Profile">
-        <i class="fa-solid fa-user"></i>
-      </a>
-    </div>
-  </header>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  <a href="home.html" class="logo">
+    <img src="../img/Logo.svg" alt="Chal Sathi logo">
+  </a>
+  <nav class="site-nav" id="siteNav">
+    <a href="home.html" class="nav-link">HOME</a>
+    <a href="about.html" class="nav-link active">ABOUT</a>
+    <a href="menu.html" class="nav-link">MENU</a>
+    <a href="chat.html" class="nav-link">CHAT</a>
+    <a href="contact.html" class="nav-link">CONTACT</a>
+  </nav>
+  <div class="site-header__icons">
+    <a href="notifications.html" class="icon-btn" aria-label="Notifications">
+      <i class="fa-regular fa-bell"></i>
+    </a>
+    <a href="profile.html" class="avatar-btn" aria-label="Profile">
+      <i class="fa-solid fa-user"></i>
+    </a>
+    
+  </div>
+</header>
   <!-- ============ Hero ============ -->
   <section class="about-hero">
     <div class="about-hero__content">
@@ -123,5 +129,6 @@
     <p class="footer-copyright">© 2024 Chal Sathi. Togetherness in every cup.</p>
   </footer>
   <script src="../js/about.js"></script>
+  <script src="../js/shared.js"></script>
 </body>
 </html>

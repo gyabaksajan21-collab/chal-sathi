@@ -214,6 +214,8 @@ function createMessage(type, text, time, imageSrc) {
     chatMessages.appendChild(message);
 }
 
+
+
 /* =========================================
    LOAD SUPPORT BY DEFAULT
 ========================================= */

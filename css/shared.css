@@ -344,49 +344,75 @@ button {
    RESPONSIVE — MOBILE
 =================================================== */
 
-@media (max-width: 720px) {
+/* ===================================================
+   MOBILE HAMBURGER NAVIGATION
+=================================================== */
 
-  /* =========================
-     HEADER
-  ========================= */
+.hamburger-btn {
+  display: none;
+
+  background: none;
+  border: none;
+
+  width: 42px;
+  height: 42px;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--ink);
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+
+/* ===================================================
+   MOBILE
+=================================================== */
+
+@media (max-width: 720px) {
 
   .site-header {
     width: 100%;
-
+    height: 75px;
     min-height: 75px;
-    height: auto;
 
     padding: 8px 15px;
 
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-wrap: nowrap;
 
-    gap: 5px 10px;
+    gap: 10px;
   }
 
 
-  /* =========================
-     LOGO
-  ========================= */
+  /* ---------- Logo ---------- */
 
   .site-header .logo {
-    width: 85px;
+    width: 75px;
     height: 58px;
 
     flex-shrink: 0;
   }
 
   .site-header .logo img {
-    width: 85px;
+    width: 80px;
     height: 58px;
 
-    transform: scale(1.25);
+    transform: scale(1.2);
   }
 
 
-  /* =========================
-     HEADER ICONS
-  ========================= */
+  /* ---------- Hide desktop navigation ---------- */
+
+  .site-nav {
+    display: none;
+  }
+
+
+  /* ---------- Right icons ---------- */
 
   .site-header__icons {
     margin-left: auto;
@@ -394,18 +420,19 @@ button {
     display: flex;
     align-items: center;
 
-    gap: 5px;
+    gap: 4px;
   }
+
 
   .icon-btn {
     width: 40px;
     height: 40px;
   }
 
-  .icon-btn svg,
   .icon-btn i {
     font-size: 20px;
   }
+
 
   .avatar-btn {
     width: 42px;
@@ -417,48 +444,66 @@ button {
   }
 
 
-  /* =========================
-     NAVIGATION
-  ========================= */
+  /* ---------- Hamburger ---------- */
 
-  .site-nav {
-    order: 3;
+  .hamburger-btn {
+    display: flex;
+  }
 
-    width: 100%;
-    flex-basis: 100%;
 
+  .hamburger-btn i {
+    font-size: 24px;
+  }
+
+
+  /* ---------- Mobile menu ---------- */
+
+  .site-nav.mobile-open {
     display: flex;
 
-    justify-content: center;
-    align-items: center;
+    position: absolute;
 
-    gap: 4px;
+    top: 75px;
+    left: 0;
 
-    overflow-x: auto;
-    overflow-y: hidden;
+    width: 100%;
 
-    padding: 4px 0 6px;
+    background: #ffffff;
 
-    scrollbar-width: none;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 10px 20px 15px;
+
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+
+    z-index: 999;
   }
 
-  .site-nav::-webkit-scrollbar {
-    display: none;
+
+  .site-nav.mobile-open .nav-link {
+    width: 100%;
+    height: 48px;
+
+    padding: 10px 15px;
+
+    justify-content: flex-start;
+
+    font-size: 17px;
+
+    border-radius: 10px;
+
+    margin-bottom: 3px;
   }
 
-  .site-nav .nav-link {
-    flex-shrink: 0;
 
-    height: 42px;
+  .site-nav.mobile-open .nav-link.active {
+    border-radius: 10px;
 
-    padding: 8px 14px;
-
-    font-size: 15px;
-
-    border-radius: 16px;
+    background: var(--red);
+    color: #ffffff;
   }
 
-  .site-nav .nav-link.active {
-    border-radius: 18px 0 18px 0;
-  }
 }
