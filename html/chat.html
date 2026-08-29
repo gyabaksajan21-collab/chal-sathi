@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <!-- ============ Shared header ============ -->
+  <!-- header, same across all pages -->
   <header class="site-header">
     <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation">
       <i class="fa-solid fa-bars"></i>
@@ -40,7 +40,7 @@
   <main class="chat-page">
     <div class="chat-layout">
 
-      <!-- ============ Sidebar: conversations ============ -->
+      <!-- sidebar: list of conversations -->
       <aside class="chat-sidebar">
         <div class="chat-search">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -51,7 +51,7 @@
 
         <div class="conversation-list" id="conversation-list">
 
-    <!-- Support -->
+    <!-- support conversation -->
     <div class="conversation-item active" data-conversation="support">
 
         <div class="conversation-item__avatar">
@@ -73,7 +73,7 @@
     </div>
 
 
-    <!-- Menu -->
+    <!-- menu inquiries conversation -->
     <div class="conversation-item" data-conversation="menu">
 
         <div class="conversation-item__avatar">
@@ -97,7 +97,7 @@
 </div>
       </aside>
 
-      <!-- ============ Main: chat window ============ -->
+      <!-- main chat window -->
       <section class="chat-main">
         <div class="chat-main__header">
           <div class="avatar">
@@ -157,7 +157,7 @@
     </div>
   </main>
 
-  <!-- ============ Shared footer ============ -->
+  <!-- footer, same across all pages -->
   <footer class="site-footer">
     <div class="footer-top">
       <div class="footer-col brand">

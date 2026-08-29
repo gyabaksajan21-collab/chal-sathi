@@ -14,9 +14,7 @@
 </head>
 <body>
 
-  <!-- ============ Shared header (nav suppressed to plain text,
-       matching the Figma note "Navigation suppressed for
-       transactional page" — icons stay for wayfinding) ============ -->
+  <!-- header, same across all pages -->
   <header class="site-header" >
     <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation">
       <i class="fa-solid fa-bars"></i>
@@ -38,8 +36,9 @@
       </a>
     </div>
   </header>
-  <!-- Order Success Popup -->
-<div class="order-popup" id="order-popup">
+
+  <!-- shown briefly after a successful order -->
+  <div class="order-popup" id="order-popup">
     <div class="popup-box">
         <div class="popup-icon">
             <i class="fa-solid fa-circle-check"></i>
@@ -64,7 +63,7 @@
 
     <form class="checkout-layout" id="checkout-form">
 
-      <!-- ============ Left column: forms ============ -->
+      <!-- left side: delivery + payment forms -->
       <div class="checkout-forms">
 
         <section class="checkout-card">
@@ -124,12 +123,12 @@
         </section>
       </div>
 
-      <!-- ============ Right column: order summary ============ -->
+      <!-- right side: order summary -->
       <aside class="order-summary">
         <h2>Order Summary</h2>
 
         <div class="summary-list" id="summary-list">
-          <!-- Filled in by checkout.js -->
+          <!-- filled in by checkout.js -->
         </div>
 
         <div class="summary-rows">
@@ -149,7 +148,7 @@
     </form>
   </main>
 
-  <!-- ============ Shared footer ============ -->
+  <!-- footer, same across all pages -->
   <footer class="site-footer">
     <div class="footer-top">
       <div class="footer-col brand">
