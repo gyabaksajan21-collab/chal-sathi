@@ -3,219 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Chal Sathi | Sign Up</title>
 
-  <!-- Font Awesome -->
-  <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&family=Crimson+Text&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/signup.css">
 </head>
 
 <body>
-
   <div class="signup-page">
-
-    <!-- Background -->
     <div class="bg-photo"></div>
     <div class="bg-overlay"></div>
 
-    <!-- Sign Up Card -->
     <section class="signup-card">
-
-      <!-- Header -->
       <div class="card-header">
-
-        <h1 class="signup-card__title">
-          WELCOME,<br>
-          TO<br>
-          CHAL SATHI
-        </h1>
-
-        <img
-          class="brand-mark"
-          src="../img/Logo.svg"
-          alt="Chal Sathi logo"
-        >
-
+        <h1 class="signup-card__title">WELCOME,<br>TO<br>CHAL SATHI</h1>
+        <img class="brand-mark" src="../img/Logo.svg" alt="Chal Sathi logo">
       </div>
 
-
-      <!-- Sign Up Form -->
       <form id="signup-form" class="signup-form" novalidate>
-
-        <!-- Full Name -->
         <div class="field">
-
           <label for="fullname">FULL NAME</label>
-
-          <input
-            type="text"
-            id="fullname"
-            name="fullname"
-            placeholder="Your full name"
-            autocomplete="name"
-            required
-          >
-
+          <input type="text" id="fullname" name="fullname" placeholder="Your full name" autocomplete="name" required>
         </div>
 
-
-        <!-- Email -->
         <div class="field">
-
           <label for="email">EMAIL</label>
-
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="you@example.com"
-            autocomplete="email"
-            required
-          >
-
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
         </div>
 
-
-        <!-- Password -->
         <div class="field">
-
           <label for="password">PASSWORD</label>
-
           <div class="password-wrap">
-
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="••••••••••••"
-              autocomplete="new-password"
-              minlength="6"
-              required
-            >
-
-            <button
-              type="button"
-              class="eye-btn"
-              id="toggle-password"
-              aria-label="Show password"
-            >
-              <i
-                id="eye-icon"
-                class="fa-solid fa-eye"
-              ></i>
+            <input type="password" id="password" name="password" placeholder="••••••••••••" autocomplete="new-password" minlength="6" required>
+            <button type="button" class="eye-btn" id="toggle-password" aria-label="Show password">
+              <i id="eye-icon" class="fa-solid fa-eye"></i>
             </button>
-
           </div>
-
         </div>
 
-
-        <!-- Confirm Password -->
         <div class="field">
-
           <label for="confirm-password">CONFIRM PASSWORD</label>
-
           <div class="password-wrap">
-
-            <input
-              type="password"
-              id="confirm-password"
-              name="confirm-password"
-              placeholder="••••••••••••"
-              autocomplete="new-password"
-              minlength="6"
-              required
-            >
-
-            <button
-              type="button"
-              class="eye-btn"
-              id="toggle-confirm-password"
-              aria-label="Show confirm password"
-            >
-              <i
-                id="confirm-eye-icon"
-                class="fa-solid fa-eye"
-              ></i>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="••••••••••••" autocomplete="new-password" minlength="6" required>
+            <button type="button" class="eye-btn" id="toggle-confirm-password" aria-label="Show confirm password">
+              <i id="confirm-eye-icon" class="fa-solid fa-eye"></i>
             </button>
-
           </div>
-
         </div>
 
+        <p id="error-msg" class="error-msg" hidden></p>
 
-        <!-- Error Message -->
-        <p
-          id="error-msg"
-          class="error-msg"
-          hidden
-        ></p>
+        <button type="submit" class="signup-btn">SIGN UP</button>
 
-
-        <!-- Sign Up Button -->
-        <button
-          type="submit"
-          class="signup-btn"
-        >
-          SIGN UP
-        </button>
-
-
-        <!-- Divider -->
-        <p class="divider">
-          <span>or</span>
-        </p>
-
+        <p class="divider"><span>or</span></p>
       </form>
 
-
-      <!-- Social Login -->
       <div class="social-row">
-
-        <a
-          href="home.html"
-          class="social-icon"
-          aria-label="Continue with Facebook"
-        >
+        <a href="home.html" class="social-icon" aria-label="Continue with Facebook">
           <i class="fa-brands fa-facebook"></i>
         </a>
 
-        <a
-          href="home.html"
-          class="social-icon"
-          aria-label="Continue with Google"
-        >
+        <a href="home.html" class="social-icon" aria-label="Continue with Google">
           <i class="fa-brands fa-google"></i>
         </a>
 
-        <a
-          href="home.html"
-          class="social-icon"
-          aria-label="Continue with phone"
-        >
+        <a href="home.html" class="social-icon" aria-label="Continue with phone">
           <i class="fa-solid fa-phone"></i>
         </a>
-
       </div>
 
-
-      <!-- Sign In -->
-      <p class="signin-row">
-        Already have an account?
-        <a href="index.html">Sign In</a>
-      </p>
-
+      <p class="signin-row">Already have an account? <a href="index.html">Sign In</a></p>
     </section>
-
   </div>
 
-
   <script src="../css/signup.js"></script>
-
 </body>
 </html>

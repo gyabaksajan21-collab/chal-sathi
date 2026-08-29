@@ -12,14 +12,17 @@
   <link rel="stylesheet" href="../css/shared.css">
   <link rel="stylesheet" href="../css/profile.css">
 </head>
-<body>
 
-  <!-- ============ Shared header ============ -->
+<body>
   <header class="site-header">
     <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation">
       <i class="fa-solid fa-bars"></i>
     </button>
-    <a href="home.html" class="logo"><img src="../img/Logo.svg" alt="Chal Sathi logo"></a>
+
+    <a href="home.html" class="logo">
+      <img src="../img/Logo.svg" alt="Chal Sathi logo">
+    </a>
+
     <nav class="site-nav" id="siteNav">
       <a href="home.html" class="nav-link">HOME</a>
       <a href="about.html" class="nav-link">ABOUT</a>
@@ -27,10 +30,12 @@
       <a href="chat.html" class="nav-link">CHAT</a>
       <a href="contact.html" class="nav-link">CONTACT</a>
     </nav>
+
     <div class="site-header__icons">
-      <a href="notifications.html" class="icon-btn" aria-label="Notifictaions">
-        <i class="fa-regular fa-bell"></i>      
+      <a href="notifications.html" class="icon-btn" aria-label="Notifications">
+        <i class="fa-regular fa-bell"></i>
       </a>
+
       <a href="profile.html" class="avatar-btn" aria-label="Profile">
         <i class="fa-solid fa-user"></i>
       </a>
@@ -38,169 +43,131 @@
   </header>
 
   <section class="profile-shell">
+    <div class="profile-layout">
+      <aside class="profile-nav">
+        <a href="profile.html" class="active">
+          <i class="fa-solid fa-user"></i>
+          <span>Profile</span>
+        </a>
 
-  <div class="profile-layout">
+        <a href="cart.html">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Cart</span>
+        </a>
 
-    <!-- ============ Left nav ============ -->
-    <aside class="profile-nav">
+        <a href="favorites.html">
+          <i class="fa-regular fa-heart"></i>
+          <span>Favorites</span>
+        </a>
 
-      <a href="profile.html" class="active">
-        <i class="fa-solid fa-user"></i>
-        <span>Profile</span>
-      </a>
+        <a href="settings.html">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
 
-      <a href="cart.html">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span>Cart</span>
-      </a>
+        <div class="nav-divider"></div>
 
-      <a href="favorites.html">
-        <i class="fa-regular fa-heart"></i>
-        <span>Favorites</span>
-      </a>
+        <a href="index.html">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Log Out</span>
+        </a>
+      </aside>
 
-      <a href="settings.html">
-        <i class="fa-solid fa-gear"></i>
-        <span>Settings</span>
-      </a>
+      <div class="profile-main">
+        <div class="profile-card">
+          <div class="profile-card__avatar">
+            <div class="avatar-circle">
+              <i class="fa-solid fa-user"></i>
+            </div>
 
-      <div class="nav-divider"></div>
-
-      <a href="index.html">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        <span>Log Out</span>
-      </a>
-
-    </aside>
-
-
-    <!-- ============ Main ============ -->
-    <div class="profile-main">
-
-      <!-- Profile Card -->
-      <div class="profile-card">
-
-        <div class="profile-card__avatar">
-
-          <div class="avatar-circle">
-            <i class="fa-solid fa-user"></i>
+            <span class="status-dot">
+              <i class="fa-solid fa-pencil"></i>
+            </span>
           </div>
 
-          <span class="status-dot">
-            <i class="fa-solid fa-pencil"></i>
-          </span>
+          <div class="profile-card__info">
+            <h1>Kai Tamang</h1>
 
+            <p>Your next cup of warmth is just a few taps away.</p>
+
+            <div class="profile-badges">
+              <span class="badge badge--soft">Member Since May 2023</span>
+              <span class="badge badge--info">Foodie Enthusiast</span>
+            </div>
+          </div>
         </div>
 
+        <h2>Recent Activity</h2>
 
-        <div class="profile-card__info">
-
-          <h1>Kai Tamang</h1>
-
-          <p>
-            Your next cup of warmth is just a few taps away.
-          </p>
-
-          <div class="profile-badges">
-
-            <span class="badge badge--soft">
-              Member Since May 2023
-            </span>
-
-            <span class="badge badge--info">
-              Foodie Enthusiast
-            </span>
-
+        <div class="activity-card">
+          <div class="activity-card__thumb">
+            <img src="../img/moonlight.png" alt="Community Meetup">
           </div>
 
-        </div>
+          <div class="activity-card__body">
+            <span class="activity-card__eyebrow">Community Event</span>
 
+            <h3>Community Meetup</h3>
+
+            <p class="activity-card__meta">
+              Tue, Oct 15 • 4:00 PM • South Riverside
+            </p>
+          </div>
+
+          <div class="activity-card__right">
+            <span class="status-pill">Pending</span>
+
+            <button class="activity-card__more" aria-label="More options" type="button">
+              <i class="fa-solid fa-ellipsis"></i>
+            </button>
+          </div>
+        </div>
       </div>
-
-
-      <!-- Recent Activity -->
-      <h2>Recent Activity</h2>
-
-      <div class="activity-card">
-
-        <div class="activity-card__thumb">
-          <img src="../img/moonlight.png" alt="Community Meetup">
-        </div>
-
-        <div class="activity-card__body">
-
-          <span class="activity-card__eyebrow">
-            Community Event
-          </span>
-
-          <h3>Community Meetup</h3>
-
-          <p class="activity-card__meta">
-            Tue, Oct 15 • 4:00 PM • South Riverside
-          </p>
-
-        </div>
-
-        <div class="activity-card__right">
-
-          <span class="status-pill">
-            Pending
-          </span>
-
-          <button
-            class="activity-card__more"
-            aria-label="More options"
-            type="button">
-
-            <i class="fa-solid fa-ellipsis"></i>
-
-          </button>
-
-        </div>
-
-      </div>
-
     </div>
+  </section>
 
-  </div>
-
-</section>
-
-  <!-- ============ Shared footer ============ -->
   <footer class="site-footer">
     <div class="footer-top">
       <div class="footer-col brand">
         <div class="brand-name">Chal Sathi</div>
         <p>Togetherness in every cup. A sanctuary for community, conversation, and the finest chai.</p>
       </div>
+
       <div class="footer-col">
         <h4>Support</h4>
         <a href="contact.html">Contact Us</a>
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
       </div>
+
       <div class="footer-col">
         <h4>Join Us</h4>
         <a href="#">Careers</a>
+
         <div class="social-row">
           <a href="https://www.facebook.com/" class="social-icon" aria-label="Continue with Facebook">
             <i class="fa-brands fa-square-facebook"></i>
           </a>
+
           <a href="https://mail.google.com/mail/u/0/#inbox" class="social-icon" aria-label="Continue with Google">
             <i class="fa-solid fa-envelope"></i>
           </a>
+
           <a href="home.html" class="social-icon" aria-label="Continue with phone">
             <i class="fa-solid fa-square-phone"></i>
           </a>
         </div>
       </div>
     </div>
+
     <p class="footer-tagline">
       Food • Fun • Friendship<br>
       Create • Connect • Communicate
     </p>
+
     <p class="footer-copyright">© 2024 Chal Sathi. Togetherness in every cup.</p>
   </footer>
+
   <script src="../js/shared.js"></script>
 </body>
 </html>

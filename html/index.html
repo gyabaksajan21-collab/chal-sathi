@@ -1,130 +1,69 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chal Sathi | Login</title>
 
-  <!-- Fonts used in the Figma design -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&family=Crimson+Text&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-
-  <!-- Whole screen = red backdrop + centered white login card -->
   <div class="login-page">
+    <div class="bg-photo"></div>
+    <div class="bg-overlay"></div>
 
-  <!-- Background -->
-  <div class="bg-photo"></div>
-  <div class="bg-overlay"></div>
-
-  <!-- Login Card -->
-  <section class="login-card">
-
-    <div class="card-header">
-      <h1 class="login-card__title">
-        WELCOME,<br>
-        TO<br>
-        CHAL SATHI
-      </h1>
-
-      <img class="brand-mark" src="../img/Logo.svg" alt="Chal Sathi logo">
-    </div>
-
-    <form id="login-form" class="login-form" novalidate>
-
-      <!-- Email -->
-      <div class="field">
-        <label for="email">EMAIL</label>
-
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="you@example.com"
-          autocomplete="email"
-          required
-        >
+    <section class="login-card">
+      <div class="card-header">
+        <h1 class="login-card__title">WELCOME,<br>TO<br>CHAL SATHI</h1>
+        <img class="brand-mark" src="../img/Logo.svg" alt="Chal Sathi logo">
       </div>
-      
-      <!-- Password -->
-      <div class="field">
-        <label for="password">PASSWORD</label>
 
-        <div class="password-wrap">
-
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="••••••••••••"
-            autocomplete="current-password"
-            minlength="6"
-            required
-          >
-        
-          <button type="button" id="toggle-password" class="eye-btn">
-    <i id="eye-icon" class="fa-solid fa-eye"></i>
-</button>
-
+      <form id="login-form" class="login-form" novalidate>
+        <div class="field">
+          <label for="email">EMAIL</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
         </div>
+
+        <div class="field">
+          <label for="password">PASSWORD</label>
+          <div class="password-wrap">
+            <input type="password" id="password" name="password" placeholder="••••••••••••" autocomplete="current-password" minlength="6" required>
+            <button type="button" id="toggle-password" class="eye-btn">
+              <i id="eye-icon" class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <p id="error-msg" class="error-msg" hidden></p>
+
+        <a href="#" class="forgot-link">Forgot password?</a>
+
+        <button type="submit" class="signin-btn">SIGN IN</button>
+
+        <p class="divider"><span>or</span></p>
+      </form>
+
+      <div class="social-row">
+        <a href="home.html" class="social-icon" aria-label="Continue with Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="home.html" class="social-icon" aria-label="Continue with Google">
+          <i class="fa-brands fa-google"></i>
+        </a>
+
+        <a href="home.html" class="social-icon" aria-label="Continue with phone">
+          <i class="fa-solid fa-phone"></i>
+        </a>
       </div>
 
-      <!-- Error -->
-      <p id="error-msg" class="error-msg" hidden></p>
-
-      <!-- Forgot password -->
-      <a href="#" class="forgot-link">
-        Forgot password?
-      </a>
-
-      <!-- Sign in -->
-      <button type="submit" class="signin-btn">
-        SIGN IN
-      </button>
-
-      <!-- Divider -->
-      <p class="divider">
-        <span>or</span>
-      </p>
-
-    </form>
-
-    <!-- Social login -->
-    <div class="social-row">
-
-      <a href="home.html"
-         class="social-icon"
-         aria-label="Continue with Facebook">
-        <i class="fa-brands fa-facebook"></i>
-      </a>
-
-      <a href="home.html"
-         class="social-icon"
-         aria-label="Continue with Google">
-        <i class="fa-brands fa-google"></i>
-      </a>
-
-      <a href="home.html"
-         class="social-icon"
-         aria-label="Continue with phone">
-        <i class="fa-solid fa-phone"></i>
-      </a>
-
-    </div>
-
-    <!-- Sign up -->
-    <p class="signup-row">
-      Don't have an account?
-      <a href="signup.html">Sign Up</a>
-    </p>
-
-  </section>
-
-</div>
+      <p class="signup-row">Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </section>
+  </div>
 
   <script src="../js/script.js"></script>
 </body>
